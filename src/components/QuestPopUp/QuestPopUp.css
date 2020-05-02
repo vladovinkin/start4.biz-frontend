@@ -1,0 +1,156 @@
+.popUp {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.popUp_active {
+    display: block;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popUp__card {
+    width: 396px;
+    height: 480px;
+    background-color: rgb(255, 255, 255);
+    padding: 70px 48px;
+    text-align: left;
+    position: relative;
+}
+
+.popUp__card_none {
+    display: none;
+}
+
+.popUp__question {
+    width: 396px;
+    height: 480px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.popUp__success {
+    width: 396px;
+    height: 480px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popUp__head {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.popUp__input {
+    display: inline-block;
+    height: 30px;
+    width: 100%;
+    margin-bottom: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    padding: 7px 10px;
+    color: rgb(39, 39, 39);
+    border-radius: 5px;
+}
+
+.popUp__input::-webkit-input-placeholder,
+.popUp__input::-moz-placeholder,
+.popUp__input:-moz-placeholder,
+.popUp__input:-ms-input-placeholder,
+.popUp__text::-webkit-input-placeholder,
+.popUp__text::-moz-placeholder,
+.popUp__text:-moz-placeholder,
+.popUp__text:-ms-input-placeholder {
+    color: #A2A2A2;
+}
+
+.popUp__label {
+    display: inline-block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px 0px;
+    margin-bottom: 4px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+}
+
+.popUp__text {
+    display: inline-block;
+    width: 100%;
+    height: 120px;
+    overflow-y: scroll;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    padding: 8px 10px;
+    color: rgb(39, 39, 39);
+    border-radius: 5px;
+}
+
+.popUp__text::-webkit-scrollbar {
+    width: .5em;
+  }
+   
+  .popUp__text::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+   
+  .popUp__text::-webkit-scrollbar-thumb {
+    background-color: darkgrey;
+    outline: 1px solid slategrey;
+  }
+
+  .popUp__input,
+  .popUp__text {
+      outline: none;
+  }
+
+.popUp__btn {
+    width: 146px;
+    height: 30px;
+    background: #A0A0A0;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+    color: #FFFFFF;
+    cursor: pointer;
+    box-shadow: 5px 5px 11px 0px rgba(0, 0, 0, 0.5)
+}
+
+.popUp__btn:active {
+    box-shadow: none;
+    background-color: #6C6C6C;
+}
+
+.popUp__close {
+    position: absolute;
+    top: 19.25px;
+    right: 19.25px;
+    height: 16px;
+    width: 16px;
+    padding: 0px 0px;
+    margin: 0px auto;
+    color: black;
+    line-height: 16px;
+    cursor: pointer;
+}
