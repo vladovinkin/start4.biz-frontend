@@ -8,26 +8,27 @@
 }
 
 .quest__head {
+    /* border:1px solid red; */
     margin: 0 auto;
-    min-height: 50px;
+    display: block;
     width: 100%;
     text-align: left;
-    padding: 10px 20px;
-    border-bottom: 2px solid #BFBFBF;
-    box-sizing: border-box;
+    padding: 28px 0 10px;
+    border-bottom: 1px solid #BFBFBF;
+    /* box-sizing: border-box; */
     font-family: 'roboto-light', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;
     letter-spacing: 1px;
+    cursor: pointer;
 }
 
 .quest__text {
     width: 100%;
     text-align: left;
-    padding: 10px 20px;
-    box-sizing: border-box;
+    padding: 10px 20px 22px;
     font-family: 'roboto-regular', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -43,16 +44,14 @@
 
 .quest__more {
     position: absolute;
-    top: 40px;
-    right: -32px;
+    top: 50px;
+    right: -25px;
     width: 16px;
     height: 16px;
     border: 1px solid rgb(184, 184, 184);
     border-radius: 8px;
     line-height: 16px;
     text-align: center;
-    box-sizing: border-box;
     font-size: 1.2rem;
     color: rgb(184, 184, 184);
-    cursor: pointer;
 }
