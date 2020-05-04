@@ -1,88 +1,76 @@
 .main-header {
-    width: 100%;
-    margin: 0 auto;
-    background:#EFF3F5;
     display: flex;
     flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: auto;
-    z-index: 20;
-    box-shadow: 0px 2px 30px rgba(196, 196, 196, 0.25);
+    background: #EFF3F5;
+    box-shadow: 0 2px 30px rgba(196, 196, 196, 0.25);
+}
+
+.main-header > .container-fluid {
+    padding: 0;
 }
 
 .header-up {
-    padding: 10px 80px;
     display: flex;
-    justify-content: center;
-    border-bottom: 1px solid #E3E3E3;
-    position: relative;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 80px;
+    font-family: Roboto sans-serif;
+}
+
+.header-up * {
+    margin: 0 0 0 30px;
+    color: #000000;
+    font-style: normal;
+    text-align: center;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.header-up *:hover {
+    color: #000000;
+    text-decoration: none;
 }
 
 .header-up-adress {
-    margin-right: 30px;
-    align-self: center;
-    font-family: 'roboto-light', sans-serif;
-    font-style: normal;
     font-weight: 300;
     font-size: 12px;
     line-height: 14px;
-    text-align: center;
-    letter-spacing: 1px;
-    color: #000000;
 }
 
 .header-up-email {
-    align-self: center;
-    margin-right: 30px;
-    text-decoration: none;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
 }
 
-.header-up-email-text {
-    font-family: 'roboto-light', sans-serif;
+.header-up-phone {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.header-up-button {
+    padding: 8px 20px;
+    border-radius: 4px;
+    -moz-box-shadow: inset 0 0 0 1px #445B94;
+    -webkit-box-shadow: inset 0 0 0 1px #445B94;
+    box-shadow: inset 0 0 0 1px #445B94;
     font-style: normal;
     font-weight: 300;
     font-size: 12px;
     line-height: 14px;
-    text-align: center;
-    letter-spacing: 1px;
-    color: #000000;
-}
-
-.header-up-phone {
-    align-self: center;
-    text-decoration: none;
-}
-
-.header-up-phone-text {
-    margin-right: 30px;
-    font-family: 'roboto-bold', sans-serif;
-    font-size: 14px;
-    line-height: 16px;
-    text-align: center;
-    letter-spacing: 1px;
-    color: #000000;
-}
-
-.header-up-button {
-    margin: 1.5px;
-    border: 0.5px solid #445B94;
-    box-sizing: border-box;
-    border-radius: 4px;
-    text-decoration: none;
 }
 
 .header-up-button:hover {
-    margin: 0;
-    border: 2px solid #445B94;
+    box-shadow: 0 0 0 2px #445B94;
 }
 
 .header-up-button:active {
-    margin: 2px;
-    border: none;
+    box-shadow: none;
+    font-weight: 200;
 }
 
-@-moz-document url-prefix() {
+/*@-moz-document url-prefix() {
     .header-up-button {
         margin: 1.5px;
     }
@@ -92,57 +80,40 @@
     .header-up-button:active {
         margin: 2.5px;
     }
-}
+}*/
 
-.header-up-button-text {
-    display: block;
-    padding: 8px 20px;
-    font-family: 'roboto-light', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 14px;
-    text-align: center;
-    letter-spacing: 1px;
-    color: #000000;
-}
-
-.header-up-button:active .header-up-button-text {
-    font-family: 'roboto-thin', sans-serif;
+.header-logo-image-link {
+    position: absolute;
+    top: 24px;
+    left: 80px;
 }
 
 .header-logo-image {
     fill: #020414;
-    position: absolute;
-    top: 29px;
-    left: 80px;
 }
 
 .header-logo-image:hover {
-    filter: drop-shadow(2px 2px 0.3px rgb(196, 196, 196));
+    /*filter: drop-shadow(2px 2px 0.3px rgb(196, 196, 196));*/
+    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.25));
 }
 
-.header-down {
-    padding: 15px 80px;
-    display: flex;
-    justify-content: right;
+.header-horizontal {
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #E3E3E3;
 }
 
-/* .header-down-main-menu {} */
-
-.header-down-main-menu-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
+.header-down-menu {
     display: flex;
     flex-wrap: nowrap;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 13px 80px;
+    list-style: none;
 }
 .header-down-main-menu-item {
     margin-left: 68px;
-}
-
-.header-down-main-menu-item:first-child {
-    margin-left: 190px;
 }
 
 .header-down-main-menu-link {
@@ -153,7 +124,7 @@
 .header-down-main-menu-link-text {
     font-family: 'roboto-light', sans-serif;
     font-style: normal;
-    font-weight: normal;
+    font-weight: 300;
     font-size: 14px;
     line-height: 16px;
     text-align: center;
@@ -164,6 +135,7 @@
 
 .header-down-main-menu-link:hover {
     border-bottom: 1px solid #EF3124;
+    text-decoration: none;
 }
 
 .header-down-main-menu-link:active {
