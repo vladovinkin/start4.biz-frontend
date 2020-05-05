@@ -49,6 +49,7 @@ export default function QuestionAnswer() {
     return (
         <div className="container-fluid">
             <div className="questions">
+                <div className="home-horizontal"> </div>
                 <h3 className="questions__head">Вопрос - ответ</h3>
                 <div className="questions__container">
                     {
@@ -57,8 +58,8 @@ export default function QuestionAnswer() {
                         })
                     }
                 </div>
-                <div className="questions__btn" onClick={() => togglePopUp()}>
-                    <span className="questions__btn-text">Задать вопрос</span>
+                <div className="home-button {/*questions__btn*/}" onClick={() => togglePopUp()}>
+                    <span className="{/*questions__btn-text*/}">Задать вопрос</span>
                 </div>
                 <QuestPopUp popUpOpen={popUpOpen} togglePopUp={togglePopUp} toggleVisiblePop={togglePopUp}/>
             </div>

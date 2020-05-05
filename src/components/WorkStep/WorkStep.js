@@ -52,7 +52,7 @@ export const WorkStep = ({ popupShow }) => {
            </div>
    
             <button 
-               className="work-step__button"
+               className="home-button /*work-step__button*/"
                onClick={showFormHandler}
             >
               оставить заявку

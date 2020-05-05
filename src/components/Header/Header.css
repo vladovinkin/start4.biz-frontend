@@ -5,10 +5,6 @@
     box-shadow: 0 2px 30px rgba(196, 196, 196, 0.25);
 }
 
-.main-header > .container-fluid {
-    padding: 0;
-}
-
 .header-up {
     display: flex;
     justify-content: flex-end;
