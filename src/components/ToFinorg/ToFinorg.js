@@ -8,7 +8,7 @@ import clockImage from './../../img/clock.png';
 
 function ToFinorg() {
     return (
-        <>
+        <div className="container-fluid">
             <section className="finorg-info-block">
                 <h2 className="to-finorg-header">Финансовым организациям</h2>
                 <div className="finorg-decription">
@@ -85,7 +85,7 @@ function ToFinorg() {
                     </Link>
                 </div>
         </section>
-        </>
+        </div>
     );
 }
 
