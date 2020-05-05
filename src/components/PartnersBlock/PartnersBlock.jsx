@@ -30,7 +30,7 @@ const PartnersBlock = ({partners, isShowAllPartners, toggleShowAllPartners}) => 
 
 	return (
 	<Fragment>
-        <div className="container">
+        <div className="container-fluid">
             <div className="partners-block partners-block-inner">
                 <div className="partners-block__title">Партнёры</div>
                 <div className="partners-block__partner-cards">
