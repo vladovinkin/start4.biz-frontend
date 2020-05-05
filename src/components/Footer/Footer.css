@@ -1,5 +1,5 @@
 .main-footer {
-    width: calc(100%-160px);
+    /*width: calc(100% - 160px);*/
     padding: 20px 80px;
     background: #EFF3F5;
     display: flex;
