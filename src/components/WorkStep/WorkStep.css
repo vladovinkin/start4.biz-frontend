@@ -1,8 +1,8 @@
-.container-work-step {
+/*.container-work-step {
    width: 1440px;
    width: 100%;
    margin: 0 auto;
-}
+}*/
 
 .work-step {
    display: flex; 
@@ -10,6 +10,7 @@
    justify-content: space-between;
    flex-wrap: wrap;
    padding: 71px 130px 56px 130px;
+   background: #FFF;
 }
 
 .work-step__content {
@@ -73,10 +74,11 @@
    margin: 5px 0 0 0;
 }
 
-.work-step__button {
-   margin-top: 64px;
-   margin-left: 466px;
-   border: none; 
+/*.work-step__button {
+   !*margin-top: 64px;*!
+   !*margin-left: 466px;*!
+   margin: 64px auto 0 auto;
+   border: none;
    border-radius: 4px;
    background: #445B94;
    outline: none;
@@ -88,4 +90,4 @@
    font-size: 12px;
    line-height: 16px;
    color: #FFFFFF;
-}
+}*/

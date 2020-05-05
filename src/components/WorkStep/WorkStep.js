@@ -19,7 +19,7 @@ export const WorkStep = ({ popupShow }) => {
    };
 
    return (
-      <div className="container-work-step">
+      <div className="container-fluid">
          <section className="work-step">
            
            <div className="work-step__content ">  
@@ -52,7 +52,7 @@ export const WorkStep = ({ popupShow }) => {
            </div>
    
             <button 
-               className="work-step__button"
+               className="home-button /*work-step__button*/"
                onClick={showFormHandler}
             >
               оставить заявку

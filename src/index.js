@@ -5,8 +5,9 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { rootReducer } from './store/reducers/rootReducer';
 import App from './App';
-import './index.css';
 import './normalize.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
 const store = createStore(rootReducer, compose(
 	applyMiddleware(thunk),
