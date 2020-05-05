@@ -89,7 +89,7 @@
 
 .to-business-list {
     list-style: none;
-    margin-left: 100px;
+    margin: 0 0 0 100px;
 }
 
 .to-business-item {
@@ -110,7 +110,7 @@
     height: 10px;
     position: absolute;
     left: -30px;
-    top: 0;
+    top: 10px;
     background-image: url(./../../img/list-marker.png);
     background-size: contain;
 }
@@ -158,6 +158,10 @@
     flex-grow: 1;
     margin: 10px 0px 104px 0px;
 }
+.why-we-article{
+    display: flex;
+    flex-wrap: nowrap;
+}
 .why-we-article-header {
     line-height: 21px;
     font-weight: 300;
@@ -183,5 +187,18 @@
     }
     .why-we-item {
         flex-basis: 100%;
+    }
+    .why-we-article{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .why-we-article-header{
+        margin-top: 10px;
+        text-align: center;
+    }
+    .why-we-article-img{
+        margin: 0 auto;
     }
 }
