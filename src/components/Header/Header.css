@@ -90,14 +90,15 @@
 .header-down-menu {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin: 0;
-    padding: 13px 80px;
+    padding: 13px 80px 13px 190px;
     list-style: none;
 }
-.header-down-main-menu-item {
+
+/*.header-down-main-menu-item {
     margin-left: 68px;
-}
+}*/
 
 .header-down-main-menu-link {
     text-decoration: none;
