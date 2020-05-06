@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './ToFinorg.css';
+import './toFinorg.css';
 import coinsImage from './../../img/coins.png';
 import monitorImage from './../../img/monitor.png';
 import commentImage from './../../img/comment.png';
