@@ -36,10 +36,10 @@ function ToFinorg() {
                     </Link>
                 </div>
             </section>
-            <div className="h-line"></div>
-            <section className="why-we">
+            <div className="horizontal"> </div>
+            <section className="to-finorg-why-we">
                 <h2 className="to-finorg-header why-we-header">Почему мы ?</h2>
-                <div className="finorg-decription">
+                <div className="finorg-decription why-we-description">
                     <div className="why-we-item">
                         <figure className="why-we-article">
                             <img src={coinsImage} width="110" height="110" alt="Стабильные заявки" className="why-we-article-img" />

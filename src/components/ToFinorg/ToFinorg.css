@@ -63,7 +63,11 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-/* .finorg-left-block {} */
+
+.why-we-description {
+    justify-content: space-between;
+    padding: 0 170px 0 220px;
+}
 
 .to-finorg-header {
     margin: 36px 0 40px;
@@ -141,15 +145,16 @@
 
 /* .finorg-be-partner-button {} */
 
-.h-line {
-    margin: 0 auto;
-    width: 1210px;
+.horizontal {
+    width: 100%;
     height: 1px;
     background: #000000;
 }
-.why-we{
+
+.to-finorg-why-we{
     padding-top: 63px;
 }
+
 .why-we-list-finorg {
     margin-right: 160px;
 }
@@ -161,6 +166,7 @@
     flex-basis: 50%;
     flex-grow: 1;
     margin: 10px 0px 104px 0px;
+    max-width: 405px;
 }
 .why-we-article{
     display: flex;
