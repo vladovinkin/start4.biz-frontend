@@ -7,7 +7,7 @@ import clockImage from './../../img/clock.png';
 
 function ToBusiness() {
     return (
-        <>
+        <div className="container-fluid">
             <section className="to-business">
                 <h2 className="to-business-header">Бизнесу</h2>
                 <div className="to-business-info">
@@ -72,7 +72,7 @@ function ToBusiness() {
                     </figure>
                 </div>
             </section>
-        </>
+        </div>
     );
 }
 

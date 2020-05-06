@@ -30,13 +30,14 @@ const PartnersBlock = ({partners, isShowAllPartners, toggleShowAllPartners}) => 
 
 	return (
 	<Fragment>
-        <div className="container">
+        <div className="container-fluid">
             <div className="partners-block partners-block-inner">
+                <div className="home-horizontal"> </div>
                 <div className="partners-block__title">Партнёры</div>
                 <div className="partners-block__partner-cards">
                     {partnersData}
                 </div>
-                    <div className="button partners-block__button" onClick={buttonHandler}>{buttonText}</div> 
+                    <div className="home-button {/*button partners-block__button*/}" onClick={buttonHandler}>{buttonText}</div>
             </div>
         </div>
 	</Fragment>
