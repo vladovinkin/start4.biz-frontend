@@ -76,6 +76,10 @@
     text-align: left;
 }
 
+.why-we-header {
+    text-align: center;
+}
+
 .to-business-text {
     margin-bottom: 30px;
     font-family: 'roboto-light', sans-serif;;

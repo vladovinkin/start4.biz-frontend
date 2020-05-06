@@ -38,7 +38,7 @@ function ToFinorg() {
             </section>
             <div className="h-line"></div>
             <section className="why-we">
-                <h2 className="to-finorg-header">Почему мы ?</h2>
+                <h2 className="to-finorg-header why-we-header">Почему мы ?</h2>
                 <div className="finorg-decription">
                     <div className="why-we-item">
                         <figure className="why-we-article">
