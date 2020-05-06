@@ -10,16 +10,19 @@
     justify-content: flex-end;
     align-items: center;
     padding: 10px 80px;
-    font-family: Roboto sans-serif;
+    font-family: 'roboto-light', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 1px;
 }
 
 .header-up * {
     margin: 0 0 0 30px;
-    color: #000000;
-    font-style: normal;
-    text-align: center;
-    letter-spacing: 1px;
     text-decoration: none;
+    color: #000000;
 }
 
 .header-up *:hover {
@@ -27,19 +30,8 @@
     text-decoration: none;
 }
 
-.header-up-adress {
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
-}
-
-.header-up-email {
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
-}
-
 .header-up-phone {
+    font-family: roboto-bold sans-serif;
     font-weight: bold;
     font-size: 14px;
     line-height: 16px;
@@ -51,10 +43,6 @@
     -moz-box-shadow: inset 0 0 0 1px #445B94;
     -webkit-box-shadow: inset 0 0 0 1px #445B94;
     box-shadow: inset 0 0 0 1px #445B94;
-    font-style: normal;
-    font-weight: 300;
-    font-size: 12px;
-    line-height: 14px;
 }
 
 .header-up-button:hover {
@@ -89,8 +77,7 @@
 }
 
 .header-logo-image:hover {
-    /*filter: drop-shadow(2px 2px 0.3px rgb(196, 196, 196));*/
-    filter: drop-shadow(2px 2px 1px rgba(0, 0, 0, 0.25));
+    filter: drop-shadow(2px 2px 1px rgb(196, 196, 196));
 }
 
 .header-horizontal {
@@ -103,14 +90,15 @@
 .header-down-menu {
     display: flex;
     flex-wrap: nowrap;
-    justify-content: flex-end;
+    justify-content: space-between;
     margin: 0;
-    padding: 13px 80px;
+    padding: 13px 80px 13px 190px;
     list-style: none;
 }
-.header-down-main-menu-item {
+
+/*.header-down-main-menu-item {
     margin-left: 68px;
-}
+}*/
 
 .header-down-main-menu-link {
     text-decoration: none;
