@@ -2,9 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './ToFinorg.css';
 import coinsImage from './../../img/coins.png';
-import monitorImage from './../../img/monitor.png';
+import monitorImage from './../../img/icon-mac-black.png';
 import commentImage from './../../img/comment.png';
-import clockImage from './../../img/clock.png';
+import clockImage from './../../img/icon-clock-black.png';
 
 function ToFinorg() {
     return (
