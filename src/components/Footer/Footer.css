@@ -28,7 +28,7 @@
 }
 
 .footer-left-list-item:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .footer-left-list-link {
@@ -37,6 +37,8 @@
 
 .footer-left-list-link-text {
     font-family: 'roboto-light', sans-serif;
+    font-style: normal;
+    font-weight: 300;
     font-size: 12px;
     line-height: 14px;
     letter-spacing: 1px;
@@ -88,31 +90,31 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    font-family: 'roboto-light', sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-align: right;
 }
 
 .footer-email {
     display: block;
-    text-decoration: none;
     margin-bottom: 8px;
 }
 
 .footer-email-text {
-    font-family: 'roboto-regular', sans-serif;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 1px;
     color: #000000;
 }
 
 .footer-phone {
-    display: block;   
-    text-decoration: none;
+    display: block;
 }
 
 .footer-phone-text {
-    font-family: 'roboto-regular', sans-serif;
-    font-size: 14px;
-    line-height: 16px;
-    letter-spacing: 1px;
     color: #000000;
+}
+
+.footer-email:hover,
+.footer-phone:hover {
+    text-decoration: none;
 }
