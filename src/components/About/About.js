@@ -20,14 +20,14 @@ class About extends React.Component {
             const contactsTop = contactsArticle.getBoundingClientRect().top;
             const aboutTop = aboutDiv.getBoundingClientRect().top;
             ypos = contactsTop - aboutTop + 50;
-            
+
         };
         window.scrollTo(0, ypos);
     };
     render(){
-        
+
         return (
-            <>
+            <div className="container-fluid">
                 <section className="about">
                     <h1 className="about-header"><a name="about" className="anchor">О Компании</a></h1>
                     <article className="about-article">
@@ -65,11 +65,11 @@ class About extends React.Component {
                         <a className="contacts-text-map-see" href="#">Посмотреть на карте</a>
                     </div>
                 </article>
-            </>
+            </div>
         );
     }
-    
-    
+
+
 }
 
 export default About;

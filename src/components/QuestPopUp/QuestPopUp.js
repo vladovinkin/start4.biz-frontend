@@ -38,7 +38,7 @@ if(popUpOpen) {
 
     return (
         <div className={classText.join(" ")}>
-            <div className="popUp__card">
+            <div className={!validPop ? "popUp__card" : "popUp__card popUp__card_noPad"}>
                 <div className={!validPop ? "popUp__question" : "popUp__card_none"}>
                     <h4 className="popUp__head">Задать вопрос</h4>
                     <span className="popUp__label" name="email">
@@ -53,7 +53,7 @@ if(popUpOpen) {
                 </div>
                 
                 <div className={validPop ? "popUp__success" : "popUp__card_none"}>
-                    <h4 className="popUp__head">Ваш запрос успешно отправлен</h4>
+                    <h4 className="popUp__head">Ваш вопрос отправлен</h4>
                 </div>
                 
                 <div className="popUp__close" onClick={() => [togglePopUp(), setValidPop(), clear()]}>&times;</div>

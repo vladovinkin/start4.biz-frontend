@@ -1,8 +1,8 @@
-.container-work-step {
+/*.container-work-step {
    width: 1440px;
    width: 100%;
    margin: 0 auto;
-}
+}*/
 
 .work-step {
    display: flex; 
@@ -10,6 +10,7 @@
    justify-content: space-between;
    flex-wrap: wrap;
    padding: 71px 130px 56px 130px;
+   background: #FFF;
 }
 
 .work-step__content {
@@ -30,26 +31,26 @@
 
 .work-step__img {
    width: 72px;
-   height: 74px;
+   height: 72px;
 }
 .work-step__img-applications {
-   background-image: url(./../../img/filing_an_application.png);
+   background-image: url(./../../img/icon-mac-blue.png);
    background-repeat: no-repeat;
 }
 .work-step__img-sentence {
-   background-image: url(./../../img/search_applications.png);
+   background-image: url(./../../img/icon-search-blue.png);
    background-repeat: no-repeat;
 }
 .work-step__img-terms {
-   background-image: url(./../../img/offer_search.png);
+   background-image: url(./../../img/icon-select-blue.png);
    background-repeat: no-repeat;
 }
 .work-step__img-documents {
-   background-image: url(./../../img/Group_23.png);
+   background-image: url(./../../img/icon-document-blue.png);
    background-repeat: no-repeat;
 }
 .work-step__img-deal {
-   background-image: url(./../../img/deal.png);
+   background-image: url(./../../img/icon-deal-blue.png);
    background-repeat: no-repeat;
 }
 
@@ -73,10 +74,11 @@
    margin: 5px 0 0 0;
 }
 
-.work-step__button {
-   margin-top: 64px;
-   margin-left: 466px;
-   border: none; 
+/*.work-step__button {
+   !*margin-top: 64px;*!
+   !*margin-left: 466px;*!
+   margin: 64px auto 0 auto;
+   border: none;
    border-radius: 4px;
    background: #445B94;
    outline: none;
@@ -88,4 +90,4 @@
    font-size: 12px;
    line-height: 16px;
    color: #FFFFFF;
-}
+}*/

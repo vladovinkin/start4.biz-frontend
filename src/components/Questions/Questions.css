@@ -1,12 +1,13 @@
 .questions {
     width: 100%;
-    background: #EFEFEF;
-    padding: 138px 0 77px;
+    background: #FFF;
+    padding: 0 80px 77px 80px;
     display: flex;
     flex-direction: column;
 }
 
 .questions__head {
+    margin: 0;
     font-family: 'roboto-light', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -17,9 +18,10 @@
 }
 
 .questions__container {
-    padding: 40px 150px 50px;
+    padding: 40px 70px 50px 70px;
 }
 
+/*
 .questions__btn {
     margin: 0 auto;
     padding: 18px 62px;
@@ -27,6 +29,7 @@
     background: #5A85D4;
     box-shadow: 5px 5px 11px 0px rgba(0,0,0,0.75);
 }
+*/
 
 .questions__btn:hover {
     background: #445B94;

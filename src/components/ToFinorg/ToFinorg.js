@@ -2,13 +2,13 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import './ToFinorg.css';
 import coinsImage from './../../img/coins.png';
-import monitorImage from './../../img/monitor.png';
+import monitorImage from './../../img/icon-mac-black.png';
 import commentImage from './../../img/comment.png';
-import clockImage from './../../img/clock.png';
+import clockImage from './../../img/icon-clock-black.png';
 
 function ToFinorg() {
     return (
-        <>
+        <div className="container-fluid">
             <section className="finorg-info-block">
                 <h2 className="to-finorg-header">Финансовым организациям</h2>
                 <div className="finorg-decription">
@@ -36,10 +36,10 @@ function ToFinorg() {
                     </Link>
                 </div>
             </section>
-            <div className="h-line"></div>
-            <section className="why-we">
-                <h2 className="to-finorg-header">Почему мы ?</h2>
-                <div className="finorg-decription">
+            <div className="horizontal"> </div>
+            <section className="to-finorg-why-we">
+                <h2 className="to-finorg-header why-we-header">Почему мы ?</h2>
+                <div className="finorg-decription why-we-description">
                     <div className="why-we-item">
                         <figure className="why-we-article">
                             <img src={coinsImage} width="110" height="110" alt="Стабильные заявки" className="why-we-article-img" />
@@ -85,7 +85,7 @@ function ToFinorg() {
                     </Link>
                 </div>
         </section>
-        </>
+        </div>
     );
 }
 
