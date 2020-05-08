@@ -1,13 +1,13 @@
 import React from 'react';
-import './ToBusiness.css';
+import './toBusiness.css';
 import coinsImage from '../../img/coins.png';
-import monitorImage from './../../img/monitor.png';
-import shieldImage from './../../img/shield.png';
-import clockImage from './../../img/clock.png';
+import monitorImage from './../../img/icon-mac-black.png';
+import shieldImage from './../../img/icon-shield-black.png';
+import clockImage from './../../img/icon-clock-black.png';
 
 function ToBusiness() {
     return (
-        <>
+        <div className="container-fluid">
             <section className="to-business">
                 <h2 className="to-business-header">Бизнесу</h2>
                 <div className="to-business-info">
@@ -72,7 +72,7 @@ function ToBusiness() {
                     </figure>
                 </div>
             </section>
-        </>
+        </div>
     );
 }
 

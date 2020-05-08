@@ -16,7 +16,7 @@ const buttonHandler = () => {
 }
 	return (
 	<Fragment>
-        <div className="container">
+        <div className="container-fluid">
             <div className="block1 block-inner">
                 <div className="block1__about-leasing">
                     <section className="about-leasing">

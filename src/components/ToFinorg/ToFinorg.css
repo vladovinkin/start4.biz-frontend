@@ -55,15 +55,35 @@
 .finorg-info-block {
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
+    flex-direction: row;
     padding-bottom: 137px;
+    flex-wrap: wrap;
+}
+.finorg-img{
+    flex-basis: 40%;
+}
+.finorg-image{
+    padding: 5%;
+    width: 100%;
+    height: auto;
+    margin-top: 30%;
+}
+.finorg-text{
+    flex-basis: 60%;
+    padding-left: 70px;
 }
 .finorg-decription{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
 }
-/* .finorg-left-block {} */
+
+.why-we-description {
+    justify-content: space-between;
+    /* padding: 0 170px 0 220px; */
+    flex-direction: row;
+
+}
 
 .to-finorg-header {
     margin: 36px 0 40px;
@@ -73,6 +93,10 @@
     font-size: 24px;
     line-height: 48px;
     color: #333333;
+    text-align: left;
+}
+
+.why-we-header {
     text-align: center;
 }
 
@@ -89,7 +113,8 @@
 
 .to-business-list {
     list-style: none;
-    margin: 0 0 0 100px;
+    /* margin: 0 0 0 100px; */
+    margin-top: 50px;
 }
 
 .to-business-item {
@@ -135,17 +160,20 @@
     line-height: 16px;
 }
 
-/* .finorg-be-partner-button {} */
+ .finorg-be-partner-button {
+     flex-basis: 100%;
+ } 
 
-.h-line {
-    margin: 0 auto;
-    width: 1210px;
+.finorg-horizontal {
+    width: 100%;
     height: 1px;
     background: #000000;
 }
-.why-we{
+
+.to-finorg-why-we{
     padding-top: 63px;
 }
+
 .why-we-list-finorg {
     margin-right: 160px;
 }
@@ -157,6 +185,7 @@
     flex-basis: 50%;
     flex-grow: 1;
     margin: 10px 0px 104px 0px;
+    max-width: 405px;
 }
 .why-we-article{
     display: flex;
@@ -176,6 +205,13 @@
     margin-right: 17px;
 }
 @media screen and (max-width: 767px) {
+    .finorg-img{
+        flex-basis: 100%;
+    }
+    .finorg-text{
+        flex-basis: 100%;
+        padding: 0;
+    }
     .finorg-left-block {
         flex-basis: 100%;
     }

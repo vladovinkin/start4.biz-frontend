@@ -52,6 +52,35 @@
     border-radius: 8px;
     line-height: 16px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: rgb(184, 184, 184);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0px 0px;
+    margin: 0px auto;
+}
+
+.quest__more:hover {
+    top: 47.5px;
+    right: -27.5px;
+    width: 21px;
+    height:  21px;
+    color: #4B4B4B;
+    border: 1px solid #4B4B4B;
+    border-radius: 11px;
+    font-size: 1.3rem;
+    line-height: 21px;
+}
+
+.quest__more:active {
+    top: 47.5px;
+    right: -27.5px;
+    width: 21px;
+    height:  21px;
+    color: #4B4B4B;
+    border: 1px solid #4B4B4B;
+    border-radius: 11px;
 }
