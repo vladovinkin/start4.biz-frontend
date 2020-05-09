@@ -54,7 +54,7 @@
 .policy-contacts{
     z-index: 2;
     background-color: #EFF3F5;
-    width: 90%;
+    width: 100%;
     padding: 5%;
     margin-top: 100px;
 }
@@ -63,5 +63,8 @@
     .content-main{
         flex-basis: 100%;
         width: 100%;
+    }
+    .policy-list{
+        padding: 0;
     }
 }

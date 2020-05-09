@@ -1,5 +1,5 @@
 import React from 'react';
-import './ToBusiness.css';
+import './toBusiness.css';
 import coinsImage from '../../img/coins.png';
 import monitorImage from './../../img/icon-mac-black.png';
 import shieldImage from './../../img/icon-shield-black.png';

@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import {Switch, Route} from 'react-router-dom';
-import Uc from './../Uc/Uc';
-import ToBusiness from './../ToBusiness/ToBusiness';
-import ToFinorg from './../ToFinorg/ToFinorg';
-import About from '../About/About';
+import Uc from './../uc/Uc';
+import ToBusiness from './../toBusiness/ToBusiness';
+import ToFinorg from './../toFinorg/ToFinorg';
+import About from '../about/About';
 import BestDealBlock from './../BestDealBlock/BestDealBlock';
 import WorkStepContainer from './../../containers/WorkStepContainer';
 import Questions from './../Questions/Questions';
