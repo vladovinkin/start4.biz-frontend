@@ -1,5 +1,5 @@
 import React from 'react';
-import './uc.css';
+import './Uc.css';
 
 function Uc() {
     return (
