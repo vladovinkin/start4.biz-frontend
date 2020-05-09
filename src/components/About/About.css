@@ -1,7 +1,7 @@
 /* .about {} */
 
 .about-header {
-    margin: 0 0 0 356px;
+    /* margin: 0 0 0 356px; */
     padding: 70px 0 50px;
     font-family: 'roboto-light', sans-serif;
     font-style: normal;
@@ -30,7 +30,8 @@
 .about-article-image {
     width: 216px;
     display: block;
-    border: 1px solid #2B3349;
+    margin-top: 77px;
+    /* border: 1px solid #2B3349; */
 }
 
 .about-article-text-block {
@@ -119,7 +120,7 @@
 
 .contacts-map {
     box-shadow: 8px 10px 8px rgba(0, 0, 0, 0.25);
-    flex-basis: 620px;
+    flex-basis: 50%;
     flex-grow: 1;
 }
 

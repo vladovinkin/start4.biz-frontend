@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './About.css';
-import aboutImage from './../../img/about-photo.png';
+import aboutImage from './../../img/Logo.png';
 
 const mapPath = "https://yandex.ru/map-widget/v1/?um=constructor%3Aaee2bdb40069c5ddf76f5b5ed28e659f95bffe1c3e82a48f3eedf580587f35a5&amp;source=constructor";
 class About extends React.Component {
@@ -29,10 +29,10 @@ class About extends React.Component {
         return (
             <div className="container-fluid">
                 <section className="about">
-                    <h1 className="about-header"><a name="about" className="anchor">О Компании</a></h1>
                     <article className="about-article">
                         <img className="about-article-image" src={aboutImage} alt="Фото" width="216" height="268" />
                         <div className="about-article-text-block">
+                            <h1 className="about-header"><a name="about" className="anchor">О Компании</a></h1>
                             <p className="about-article-text about-article-text-center">
                                 Добрый день!
                             </p>
