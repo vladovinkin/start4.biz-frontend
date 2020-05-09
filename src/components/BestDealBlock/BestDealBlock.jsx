@@ -5,7 +5,7 @@ import SliderView from '../SliderView/SliderView';
 //import {proposalFormShow} from '../../store/actions/proposalActions';
 import {popupShow} from '../../store/actions/popupActions';
 import ProposalFormContainer from '../../containers/ProposalFormContainer';
-import Popup from '../Popup/Popup';
+import Popup from '../Popup/Popup.jsx';
 //import {popupReducer} from '../../store/reducers/popupReducer';
 
 const BestDealBlock = ({partners, isPopupShow, popupShow}) => {
@@ -16,7 +16,7 @@ const buttonHandler = () => {
 }
 	return (
 	<Fragment>
-        <div className="container">
+        <div className="container-fluid">
             <div className="block1 block-inner">
                 <div className="block1__about-leasing">
                     <section className="about-leasing">
