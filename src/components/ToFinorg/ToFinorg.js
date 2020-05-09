@@ -1,12 +1,11 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import './toFinorg.css';
+import './ToFinorg.css';
 import coinsImage from './../../img/coins.png';
 import monitorImage from './../../img/icon-mac-black.png';
 import commentImage from './../../img/comment.png';
 import clockImage from './../../img/icon-clock-black.png';
 import finorgImage from './../../img/finorg-image.png';
-
 
 function ToFinorg() {
     return (
@@ -43,7 +42,7 @@ function ToFinorg() {
                     </Link>
                 </div>
             </section>
-            <div className="finorg-horizontal"> </div>
+            <div className="horizontal"> </div>
             <section className="to-finorg-why-we">
                 <h2 className="to-finorg-header why-we-header">Почему мы ?</h2>
                 <div className="finorg-decription why-we-description">
