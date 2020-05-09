@@ -14,7 +14,9 @@ function Header() {
                     <a className="header-up-phone" href="tel:+79111299351"
                        title="Просто позвоните нам!">+7&nbsp;911&nbsp;129&#8209;93&#8209;51</a>
                     <Link className="header-up-button" to="/uc"
-                          title="Войти в личный кабинет">Личный&nbsp;кабинет</Link>
+                          title="Войти в личный кабинет">
+                              <span className="header-up-button-text">Личный&nbsp;кабинет</span>
+                    </Link>
                 </div>
 
                 <Link className="header-logo-image-link" to="/" title="На главную">
