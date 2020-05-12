@@ -1,12 +1,12 @@
 import { POPUP_SHOW, POPUP_HIDE } from "../types";
 
-export function popupShow(){
+export const popupShow = () =>{
 	return {
 		type: POPUP_SHOW,
 	}
 }
 
-export function popupHide(){
+export const popupHide = () =>{
 	return {
 		type: POPUP_HIDE,
 	}
