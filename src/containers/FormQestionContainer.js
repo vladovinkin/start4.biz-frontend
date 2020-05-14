@@ -5,7 +5,7 @@ import { QuestionForm } from '../components/QuestionForm/QuestionForm';
 
 const mapStateToProps = (state) => { 
    return {
-      boolean: state.popupReducer
+      isHidden: state.popupReducer
    };
 };
 
