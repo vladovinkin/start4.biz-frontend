@@ -1,6 +1,6 @@
 import React, {Fragment} from 'react';
 import { Field, reduxForm} from 'redux-form';
-import {proposalChangeStep, proposalChangeSuccess} from '../../store/actions/proposalActions';
+import {proposalChangeStep, proposalChangeSuccess, proposalRequest} from '../../store/actions/proposalActions';
 import {required} from '../../validators/validator';
 import './ProposalForm.css';
 
@@ -11,31 +11,31 @@ const ProposalStep1 = ({stepForward}) => {
 			<h2 className="proposal__step-title">Шаг 1 из 3</h2>
 		
 			<div className="proposal__step-input-group">
-				<label htmlFor="pName" className="proposal__step-input-label">Имя</label>
+				<label htmlFor="contact_name" className="proposal__step-input-label">Имя</label>
 				<div className="proposal__step-input-wrapper">
-					<Field name='pName' className=" proposal__step-input" component='input' type='text' placeholder="Александр" 
+					<Field name='contact_name' className=" proposal__step-input" component='input' type='text' placeholder="Александр" 
 					validate={required}/>
 				</div>
 			</div>
 
 			<div className="proposal__step-input-group">
-				<label htmlFor="pTel" className="proposal__step-input-label">Телефон</label>
+				<label htmlFor="contact_phone" className="proposal__step-input-label">Телефон</label>
 				<div className="proposal__step-input-wrapper">
-					<Field name='pTel' className="form-control proposal__step-input" component='input' type='text' placeholder="+7-912-999-9999"/>
+					<Field name='contact_phone' className="form-control proposal__step-input" component='input' type='text' placeholder="+7-912-999-9999"/>
 				</div>
 			</div>
 
 			<div className="proposal__step-input-group">
-				<label htmlFor="pEmail" className="proposal__step-input-label">Эл. почта</label>
+				<label htmlFor="contact_email" className="proposal__step-input-label">Эл. почта</label>
 				<div className="proposal__step-input-wrapper">
-					<Field name='pEmail' className="form-control proposal__step-input" component='input' type='text' placeholder="alexanderivanov@mail.ru"/>
+					<Field name='contact_email' className="form-control proposal__step-input" component='input' type='text' placeholder="alexanderivanov@mail.ru"/>
 				</div>
 			</div>
 
 		</div>
 		<div className="proposal__paginator">
-					<button className="proposal__previous-step-link proposal__step-link--invisible proposal__button">Шаг назад</button>
-					<button className="proposal__next-step-link proposal__button" onClick={stepForward}>Шаг 2</button>
+			<button className="proposal__previous-step-link proposal__step-link--invisible proposal__button">Шаг назад</button>
+			<button className="proposal__next-step-link proposal__button" onClick={stepForward}>Шаг 2</button>
 		</div>
 	</Fragment>
 	)
@@ -48,15 +48,15 @@ const ProposalStep2 = ({whatToBuy, transportPurpose, stepBack, stepForward}) => 
 			<h2 className="proposal__step-title">Шаг 2 из 3</h2>
 
 			<div className="proposal__step-input-group">
-				<label htmlFor="pInn" className="proposal__step-input-label" >Инн организации</label>
+				<label htmlFor="inn" className="proposal__step-input-label" >Инн организации</label>
 				<div className="proposal__step-input-wrapper">
-					<Field name='pInn' className="form-control proposal__step-input" component='input' type='text' placeholder="**********"/>
+					<Field name='inn' className="form-control proposal__step-input" component='input' type='text' placeholder="**********"/>
 				</div>
 			</div>
 
 			<div className="proposal__step-input-group">
-				<label htmlFor="pWdyw" className="proposal__step-input-label">Что необходимо приобрести</label>
-				<Field name='pWdyw' className="form-control proposal__step-input" component='select' type='text'>
+				<label htmlFor="request_subject" className="proposal__step-input-label">Что необходимо приобрести</label>
+				<Field name='request_subject' className="form-control proposal__step-input" component='select' type='text'>
 				{whatToBuy.map((value, key) => {
 				return <option key={key} value={value}>{value}</option>
 				})}
@@ -64,8 +64,8 @@ const ProposalStep2 = ({whatToBuy, transportPurpose, stepBack, stepForward}) => 
 			</div>
 
 			<div className="proposal__step-input-group">
-				<label htmlFor="pNt" className="proposal__step-input-label">Назначение транспорта</label>
-				<Field name='pNt' className="form-control proposal__step-input" component='select' type='text' placeholder="">
+				<label htmlFor="subject_purpose" className="proposal__step-input-label">Назначение транспорта</label>
+				<Field name='subject_purpose' className="form-control proposal__step-input" component='select' type='text' placeholder="">
 				{transportPurpose.map((value, key) => {
 				return <option key={key} value={value}>{value}</option>
 				})}
@@ -87,15 +87,15 @@ const ProposalStep3 = ({summAvPayment, leasingPeriod, stepBack}) => {
 		<h2 className="proposal__step-title">Шаг 3 из 3</h2>
 
 		<div className="proposal__step-input-group">
-			<label htmlFor="pPl" className="proposal__step-input-label">Опишите предмет лизинга</label>
+			<label htmlFor="subject_description" className="proposal__step-input-label">Опишите предмет лизинга</label>
 			<div className="proposal__step-input-wrapper">
-				<Field name='pPl' className="form-control proposal__step-input" component='input' type='text' placeholder="Предмет лизинга"/>
+				<Field name="subject_description" className="form-control proposal__step-input" component='input' type='text' placeholder="Предмет лизинга"/>
 			</div>
 		</div>
 
 		<div className="proposal__step-input-group">
-			<label htmlFor="pSp" className="proposal__step-input-label">Сумма авансового платеже (%)</label>
-			<Field name='pSp' className="form-control proposal__step-input" component='select' type='text'>
+			<label htmlFor="advance_payment" className="proposal__step-input-label">Сумма авансового платеже (%)</label>
+			<Field name="advance_payment" className="form-control proposal__step-input" component='select' type='text'>
 			{summAvPayment.map((value, key) => {
 				return <option key={key} value={value}>{value}</option>
 			})}
@@ -103,8 +103,8 @@ const ProposalStep3 = ({summAvPayment, leasingPeriod, stepBack}) => {
 		</div>
 		
 		<div className="proposal__step-input-group">
-			<label htmlFor="pSl" className="proposal__step-input-label" >Срок лизинга (мес.)</label>
-			<Field name='pSl' className="form-control proposal__step-input" component={'select'} type='text'>
+			<label htmlFor="credit_period" className="proposal__step-input-label" >Срок лизинга (мес.)</label>
+			<Field name="credit_period" className="form-control proposal__step-input" component={'select'} type='text'>
 				{leasingPeriod.map((value, key) => {
 				return <option key={key} value={value}>{value}</option>
 				})}
@@ -177,7 +177,8 @@ return (
 
 const onSubmit = (values, dispatch) => {
 	console.log("form data", values);
-	dispatch(proposalChangeSuccess(true));
+	//dispatch(proposalChangeSuccess(true));
+	dispatch(proposalRequest(values));
 };
 
 //оборачиваю форму в reduxForm
