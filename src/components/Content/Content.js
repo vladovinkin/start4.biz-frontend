@@ -8,6 +8,7 @@ import BestDealBlock from './../BestDealBlock/BestDealBlock';
 import WorkStepContainer from './../../containers/WorkStepContainer';
 import Questions from './../Questions/Questions';
 import PartnersBlock from './../PartnersBlock/PartnersBlock';
+import PersonalAccount from '../PersonalAccount/PersonalAccount';
 import Policy from './../Policy/Policy';
 import './Content.css';
 
@@ -42,6 +43,9 @@ function Content() {
                 </Route>
                 <Route path="/uc">
                     <Uc />
+                </Route>
+                <Route path="/account">
+                    <PersonalAccount />
                 </Route>
                 <Route path="/">
                     <Fragment>

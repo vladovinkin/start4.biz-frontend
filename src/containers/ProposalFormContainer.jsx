@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import ProposalForm from '../components/ProposalForm/ProposalForm';
-import {proposalChangeStep, proposalChangeSuccess} from '../store/actions/proposalActions';
+import {proposalChangeStep, proposalChangeSuccess, proposalRequest} from '../store/actions/proposalActions';
 
 const mapStateToProps = (state) => {
     return {
@@ -21,6 +21,10 @@ const mapDispatchToProps = (dispatch) => {
 
     changeSuccess: (value) => {
       dispatch(proposalChangeSuccess(value))
+    },
+
+    proposalRequest: (formData) => {
+      dispatch(proposalRequest(formData))
     }
   }
 }
