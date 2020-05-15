@@ -109,17 +109,22 @@ export const proposalRequest = (formData) => {
 		status: false,
 		data: formData,
 	}
+	const dataReady = '{contact_name: "Коля", contact_phone: "+79876543210", contact_email: "nikolay@mail.ru", inn: "123456789012", request_subject: "значение 1", subject_description: "танк", subject_purpose: "значение 2"}';
+	const dataReadyJson = '{"contact_name":"Коля","contact_phone":"+79876543210","contact_email":"nikolay@mail.ru","inn":"123456789012","request_subject":"значение 1","subject_purpose":"значение 2","subject_description":"танк","advance_payment":"3","credit_period":"1"}';
 	const options = {
 		method: 'POST',
 //		mode: 'no-cors',
 		headers: {
-			'Content-Type': 'application/json;charset=utf-8',
+			// 'Content-Type': 'application/json;charset=utf-8',
+			'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*',
 //			'Access-Control-Allow-Methods': "POST",
-//			'Accept': 'application/json',
-//			'Content-Type': 'multipart/form-data',
+			'Accept': 'application/json',
 		},
-		body: JSON.stringify(formData),
+		// body: JSON.stringify(formData),
+		body: dataReadyJson,
+		// body: formData,
+		// {"status":false,"data":{"contact_name":["Необходимо заполнить «Contact Name»."],"contact_phone":["Необходимо заполнить «Contact Phone»."],"contact_email":["Необходимо заполнить «Contact Email»."],"inn":["Необходимо заполнить «Inn»."],"request_subject":["Необходимо заполнить «Request Subject»."],"subject_purpose":["Необходимо заполнить «Subject Purpose»."],"subject_description":["Необходимо заполнить «Subject Description»."],"advance_payment":["Необходимо заполнить «Advance Payment»."],"credit_period":["Необходимо заполнить «Credit Period»."]}},
 	}
 
 	console.log("data ", options.body);
