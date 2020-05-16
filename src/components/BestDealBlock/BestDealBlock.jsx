@@ -10,10 +10,10 @@ import Popup from '../Popup/Popup.jsx';
 
 const BestDealBlock = ({partners, isPopupShow, popupShow}) => {
 //	cosnt [state, dispatch] = useReducer(popupReducer, {visible: false});
-const buttonHandler = () => {
-//    proposalFormShow();
-    popupShow();
-}
+    const buttonHandler = () => {
+    //    proposalFormShow();
+        popupShow();
+    }
 	return (
 	<Fragment>
         <div className="container-fluid">
