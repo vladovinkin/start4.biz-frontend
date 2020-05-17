@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 // import * as booleanActions from './../store/actions/popupActions';
-import * as actions from './../store/actions/popupActions';
-import { WorkStep } from '../components/WorkStep/WorkStep';
+import * as actions from '../store/actions/popupActions';
+import { PersonalRegistration } from '../components/PersonalRegistration/PersonalRegistration';
 
 const mapStateToProps = (state) => {
    return {
@@ -17,4 +17,4 @@ const mapDispatchToProps = dispatch => {
    }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WorkStep);
+export default connect(mapStateToProps, mapDispatchToProps)(PersonalRegistration);

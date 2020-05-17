@@ -13,5 +13,5 @@ export const POPUP_HIDE = 'POPUP_HIDE';
 export const ADD_PARTNER = "ADD_PARTNER";
 export const SHOW_ALL_PARTNERS = "SHOW_ALL_PARTNERS";
 //question form
-export const BOOL_TRUE = "BOOLEAN_ACTIONS_TRUE";
-export const BOOL_FALSE = "BOOLEAN_ACTIONS_FALSE";
+// export const BOOL_TRUE = "BOOLEAN_ACTIONS_TRUE";
+// export const BOOL_FALSE = "BOOLEAN_ACTIONS_FALSE";

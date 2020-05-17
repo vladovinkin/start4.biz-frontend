@@ -3,7 +3,6 @@
     background-image: url(./../../img/laptopContactInfo.png);
     background-repeat: no-repeat;
 }
-
 .personal-account__inner {
     width: 100%;
     padding: 50px 80px 50px 80px;
@@ -41,6 +40,7 @@
 
 .personal-account__content {
     width: 840px;
+    /* display: none; */
 }
 
 .personal-account__navigation-title {

@@ -1,17 +1,13 @@
 import React from 'react';
-/**
- * FormQuestionContainer компонент форма
- */
-// import FormQuestionContainer from './../../containers/FormQestionContainer';
+
 import './WorkStep.css';
 /**
  * Элемент шагов работы компании 
- * @param boolean булево значение по умолчанию false
- * @param AddTrue action меняющий состояние на true тем самым позволяет отображение компонента форма
+ * @param popupShow 
  * @returns возвращает верстку элемента
  */
 export const WorkStep = ({ popupShow }) => {
-/**
+   /**
  * Функция кнопки вызывает окно
  */
    const showFormHandler = () => {
@@ -57,7 +53,6 @@ export const WorkStep = ({ popupShow }) => {
             >
               оставить заявку
            </button>
-           {/* {boolean && <FormQuestionContainer />} */}
          </section>
       </div>
    )
