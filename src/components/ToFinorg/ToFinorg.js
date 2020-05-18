@@ -1,13 +1,21 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import './ToFinorg.css';
 import coinsImage from './../../img/coins.png';
 import monitorImage from './../../img/icon-mac-black.png';
 import commentImage from './../../img/comment.png';
 import clockImage from './../../img/icon-clock-black.png';
 import finorgImage from './../../img/finorg-image.png';
+import QuestionFormContainer from './../../containers/QuestionFormContainer';
+import {popupShow} from './../../store/actions/popupActions';
+import Popup from './../Popup/Popup.jsx';
 
-function ToFinorg() {
+const ToFinorg = ({isPopupShow, popupShow}) => {
+
+    const buttonHandler = () => {
+        popupShow();
+    }
+
     return (
         <div className="container-fluid">
             <section className="finorg-info-block">
@@ -20,7 +28,6 @@ function ToFinorg() {
                         <div className="finorg-left-block">
                             <p className="to-business-text">Портал start4.biz позволяет быстро и удобно получить выгодные предложения по ряду продуктов от ведущих лизинговых и финансовых компаний.</p>
                             <p className="to-business-text">Мы будем рады видеть Вас в качестве компании-партнера, если Вы имеете лицензию ЦБ на предоставление финансовых услуг юридическим лицам и предоставляете следующие услуги :</p>
-                            
                         </div>
                         <div className="finorg-right-block">
                             <ul className="to-business-list">
@@ -32,14 +39,12 @@ function ToFinorg() {
                                 <li className="to-business-item">Иные финансовые услуги</li>
                             </ul>
                         </div>
+                    </div>
                 </div>
-                </div>
-                <div className="finorg-be-partner-button">
-                    <Link to="/uc" className="page-button-fin be-partner-button-fin">
-                        <span className="page-button-text be-partner-button-text">
-                            Стать партнёром
-                        </span>
-                    </Link>
+                <div className="home-button page-button be-partner-button-fin" onClick={buttonHandler}>
+                    <span className="page-button-text be-partner-button-text">
+                        Стать партнёром
+                    </span>
                 </div>
             </section>
             <div className="horizontal"> </div>
@@ -83,16 +88,29 @@ function ToFinorg() {
                         </figure>
                     </div>
                 </div>
-                <div className="finorg-be-partner-button">
-                    <Link to="/uc" className="page-button-fin be-partner-button-fin">
+                <div className="home-button page-button be-partner-button-fin" onClick={buttonHandler}>
                     <span className="page-button-text be-partner-button-text">
                         Стать партнёром
                     </span>
-                    </Link>
                 </div>
+                {isPopupShow && <Popup form={<QuestionFormContainer />}/>}
         </section>
         </div>
     );
 }
 
-export default ToFinorg;
+const mapStateToProps = state => {
+	return {
+        isPopupShow: state.popup.isShow,
+	}
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+       popupShow: () => {
+           dispatch(popupShow());
+      },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ToFinorg);
