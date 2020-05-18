@@ -1,32 +1,39 @@
 import React, { Fragment, useState } from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import ContactInformation from '../ContactInformation/ContactInformation';
 import OrganizationInformation from '../OrganizationInformation/OrganizationInformation';
 import PersonalAccountProposals from '../PersonalAccountProposals/PersonalAccountProposals';
 import PersonalRegistrationContainer from '../../containers/PersonalRegistrationContainer';
 import { PersonalAccountExit } from '../PersonalAccountExit/PersonalAccountExit';
+
 import "./PersonalAccount.css";
 
 const PersonalAccount = () => {
 
-const[classNames, setClassNames] = useState('question-wraper--none');
+const displayNone = 'question-wraper--none';
+
+const[classNames, setClassNames] = useState(displayNone);
+const[redirect, setRedirect] = useState(false);
 
 const clickHendlerNo = () => {
-   setClassNames('question-wraper--none')
+    if(classNames === displayNone) {
+        return setClassNames('');
+    }
+    setClassNames(displayNone);
 };
 
 const clickHendlerYes = () => {
-	setClassNames('');
-	console.log('PersonalAccount.jsx: click');
+    setRedirect(true);
 };
-   
-const login = true;
+// ждем token 
+const login = false;
 
 return (
    <Fragment>
 		<PersonalAccountExit 
-		   classNames={classNames} 
+            classNames={classNames} 
+            redirect={redirect}
 			clickHendlerNo={clickHendlerNo}
 			clickHendlerYes={clickHendlerYes}
 		/>
@@ -80,13 +87,13 @@ return (
                                             </span>
                                          </Link>
                                      </li>
-												 <li className="personal-account__navigation-list-item">
-												 <a href="#"
-													className="personal-account__navigation-list-link   personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
-													onClick={clickHendlerYes}
-												   >Выход
-												 </a>
-												 </li>
+									<li className="personal-account__navigation-list-item">
+									<a href="#"
+									className="personal-account__navigation-list-link   personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
+									onClick={clickHendlerNo}
+									  >Выход
+									</a>
+									</li>
                                  </ul>
                             </div>
 									  
