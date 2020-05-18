@@ -111,17 +111,9 @@ return (
                             </>                               
                             )}
                             {!login && (
-<<<<<<< HEAD
-<<<<<<< HEAD
                               <PersonalRegistrationContainer 
                                 clickHandlerLogin={clickHandlerLogin}
                               />
-=======
-                            <PersonalRegistrationContainer />
->>>>>>> 0568b388c25ae294d78978c9ea4b5d618e7c806f
-=======
-                              <PersonalRegistrationContainer />
->>>>>>> c0867c6c478cfd0931fc34f28a277875613411fc
                             )}
                         </div>
                     </div>
