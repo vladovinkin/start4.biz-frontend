@@ -1,15 +1,15 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import './About.css';
 import aboutImage from './../../img/Logo.png';
 
 const mapPath = "https://yandex.ru/map-widget/v1/?um=constructor%3Aaee2bdb40069c5ddf76f5b5ed28e659f95bffe1c3e82a48f3eedf580587f35a5&amp;source=constructor";
 class About extends React.Component {
-    constructor(props) {
-        super(props);
+    constructor (props) {
+        super (props);
         this.contactsRef = React.createRef();
-      }
-    componentDidUpdate(){
+    }
+
+    componentDidUpdate (){
         const addr =  document.baseURI.substring(document.baseURI.lastIndexOf("/") + 1, document.baseURI.length).toLowerCase();
         const contactsArticle = document.querySelector(".contacts-article");
         const aboutDiv = document.querySelector(".about");
@@ -24,8 +24,8 @@ class About extends React.Component {
         };
         window.scrollTo(0, ypos);
     };
-    render(){
 
+    render () {
         return (
             <div className="container-fluid">
                 <section className="about">
@@ -47,11 +47,11 @@ class About extends React.Component {
                             </p>
                         </div>
                     </article>
-                    <Link to="/uc" className="page-button about-ask-question-button">
+                    <div className="page-button about-ask-question-button">
                         <span className="page-button-text about-ask-question-button-text">
                             Задать вопрос
                         </span>
-                    </Link>
+                    </div>
                 </section>
                 <div className="h-line"></div>
                 <article className="contacts-article" href={this.contactsRef}>
@@ -68,8 +68,6 @@ class About extends React.Component {
             </div>
         );
     }
-
-
 }
 
 export default About;
