@@ -1,11 +1,12 @@
 import React, {Fragment} from 'react';
 import { connect } from 'react-redux';
 import './BestDealBlock.css';
-import SliderView from '../SliderView/SliderView';
+import SliderView from './../SliderView/SliderView';
 //import {proposalFormShow} from '../../store/actions/proposalActions';
-import {popupShow} from '../../store/actions/popupActions';
-import ProposalFormContainer from '../../containers/ProposalFormContainer';
-import Popup from '../Popup/Popup.jsx';
+import {popupShow} from './../../store/actions/popupActions';
+import ProposalFormContainer from './../../containers/ProposalFormContainer';
+import Popup from './../Popup/Popup.jsx';
+import { proposalChangeStep } from './../../store/actions/proposalActions';
 //import {popupReducer} from '../../store/reducers/popupReducer';
 
 const BestDealBlock = ({partners, isPopupShow, popupShow}) => {
@@ -50,7 +51,8 @@ const mapDispatchToProps = (dispatch) => {
     //         dispatch(proposalFormShow())
     //   },
        popupShow: () => {
-           dispatch(popupShow())
+           dispatch(proposalChangeStep (1));
+           dispatch(popupShow());
       },
     }
 }
