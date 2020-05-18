@@ -6,9 +6,13 @@ import OrganizationInformation from '../OrganizationInformation/OrganizationInfo
 import PersonalAccountProposals from '../PersonalAccountProposals/PersonalAccountProposals';
 import PersonalRegistrationContainer from '../../containers/PersonalRegistrationContainer';
 import { PersonalAccountExit } from '../PersonalAccountExit/PersonalAccountExit';
+import Login from "./../Login/Login";
 import "./PersonalAccount.css";
 
-const PersonalAccount = () => {
+const PersonalAccount = (loginOpenValue = true) => {
+
+let [loginOpen, setLoginOpen] = useState(loginOpenValue);
+let [login, setLogin] = useState(false);
 
 const[classNames, setClassNames] = useState('question-wraper--none');
 
@@ -21,15 +25,33 @@ const clickHendlerYes = () => {
 	console.log('PersonalAccount.jsx: click');
 };
    
-const login = true;
+// const login = true;
+
+function toggleLogin () {
+    setLoginOpen (
+        loginOpen = !loginOpen
+    )
+}
+
+function toggleAccount() {
+    setLoginOpen (
+        loginOpen = !loginOpen
+    )
+    setLogin(
+        login = !login
+    )
+}
 
 return (
-   <Fragment>
-		<PersonalAccountExit 
-		   classNames={classNames} 
-			clickHendlerNo={clickHendlerNo}
-			clickHendlerYes={clickHendlerYes}
-		/>
+    <>
+      {loginOpen && <Login changeLogin={toggleLogin} isLogin={toggleAccount}/>}
+      {login && 
+        <Fragment>
+            <PersonalAccountExit 
+            classNames={classNames} 
+                clickHendlerNo={clickHendlerNo}
+                clickHendlerYes={clickHendlerYes}
+            />
             <div className="container-fluid">
                 <div className="personal-account">
                     <div className="personal-account__inner">
@@ -70,36 +92,38 @@ return (
                                                 Информация об организации
                                             </span>
                                         </Link>
-                                     </li>
-                                     <li className="personal-account__navigation-list-item">
+                                    </li>
+                                    <li className="personal-account__navigation-list-item">
                                         <Link to="/account/proposals"
                                             className="personal-account__navigation-list-link  personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
                                             title="Заявки">
                                             <span className="personal-account__navigation-list-text">
                                                 Заявки
                                             </span>
-                                         </Link>
-                                     </li>
-												 <li className="personal-account__navigation-list-item">
-												 <a href="#"
-													className="personal-account__navigation-list-link   personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
-													onClick={clickHendlerYes}
-												   >Выход
-												 </a>
-												 </li>
-                                 </ul>
+                                        </Link>
+                                    </li>
+                                    <li className="personal-account__navigation-list-item">
+                                    <a href="#"
+                                        className="personal-account__navigation-list-link   personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
+                                        onClick={clickHendlerYes}
+                                    >Выход
+                                    </a>
+                                    </li>
+                                </ul>
                             </div>
-									  
+                                    
                             </>                               
                             )}
                             {!login && (
-                              <PersonalRegistrationContainer />
+                            <PersonalRegistrationContainer />
                             )}
                         </div>
                     </div>
                 </div>
             </div>
         </Fragment>
+      }
+    </>
    )
 }
 

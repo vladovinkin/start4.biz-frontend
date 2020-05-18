@@ -5,7 +5,7 @@ import { PROPOSAL_CHANGE_STEP,
 	PROPOSAL_REQUEST_STARTED,
 	PROPOSAL_REQUEST_SUCCESS,
 	PROPOSAL_REQUEST_FAILURE,
- } from "../types";
+ } from "./../types";
 
 export const proposalChangeStep = (newStep) =>{
 	return {
@@ -131,7 +131,11 @@ export const proposalRequest = (formData) => {
 	return dispatch => fetch('/api/request/create-request-entry', options)
 	.then(response => {
 		console.log(response);
-		if (response.status) {alert ("Данные успешно добавлены!")}
+		if (response.status === 200) {
+			dispatch(proposalChangeSuccess(true));
+		} else {
+			alert ("Произошла ошибка при отправке данных!");
+		}
 	})
     .catch(error => console.log("Error ", error))
 
