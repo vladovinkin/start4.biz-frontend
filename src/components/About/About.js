@@ -1,15 +1,29 @@
-import React from 'react';
-import {Link} from 'react-router-dom';
+import React, {useRef, useEffect} from 'react';
+import { connect } from 'react-redux';
 import './About.css';
 import aboutImage from './../../img/Logo.png';
+import QuestionFormContainer from './../../containers/QuestionFormContainer';
+import {popupShow} from './../../store/actions/popupActions';
+import Popup from './../Popup/Popup.jsx';
 
 const mapPath = "https://yandex.ru/map-widget/v1/?um=constructor%3Aaee2bdb40069c5ddf76f5b5ed28e659f95bffe1c3e82a48f3eedf580587f35a5&amp;source=constructor";
-class About extends React.Component {
-    constructor(props) {
-        super(props);
-        this.contactsRef = React.createRef();
-      }
-    componentDidUpdate(){
+// class About extends React.Component {
+//     constructor (props) {
+//         super (props);
+//         this.contactsRef = React.createRef();
+//     }
+const About = ({isPopupShow, popupShow}) => {
+
+    let contactsRef = React.createRef();
+
+    // componentDidUpdate (){
+    const mounted = useRef();
+
+    useEffect(() => {
+    if (!mounted.current) {
+        mounted.current = true;
+    } else {
+        // do componentDidUpate logic
         const addr =  document.baseURI.substring(document.baseURI.lastIndexOf("/") + 1, document.baseURI.length).toLowerCase();
         const contactsArticle = document.querySelector(".contacts-article");
         const aboutDiv = document.querySelector(".about");
@@ -23,9 +37,15 @@ class About extends React.Component {
 
         };
         window.scrollTo(0, ypos);
-    };
-    render(){
+    }
+});
+    // };
 
+    const buttonHandler = () => {
+        popupShow();
+    }
+
+    // render () {
         return (
             <div className="container-fluid">
                 <section className="about">
@@ -47,14 +67,15 @@ class About extends React.Component {
                             </p>
                         </div>
                     </article>
-                    <Link to="/uc" className="page-button about-ask-question-button">
+                    <div className="page-button about-ask-question-button" onClick={buttonHandler}>
                         <span className="page-button-text about-ask-question-button-text">
                             Задать вопрос
                         </span>
-                    </Link>
+                    </div>
+                    {isPopupShow && <Popup form={<QuestionFormContainer />}/>}
                 </section>
                 <div className="h-line"></div>
-                <article className="contacts-article" href={this.contactsRef}>
+                <article className="contacts-article" href={contactsRef}>
                     <iframe className="contacts-map" src={mapPath} width="694" height="478" frameBorder="0" title="contacts-map-about"></iframe>
                     <div className="contacts-text">
                         <h3 className="contacts-text-header"><a name="contacts" className="anchor">Контакты</a></h3>
@@ -67,9 +88,21 @@ class About extends React.Component {
                 </article>
             </div>
         );
-    }
-
-
+    // }
 }
 
-export default About;
+const mapStateToProps = state => {
+	return {
+        isPopupShow: state.popup.isShow,
+	}
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+       popupShow: () => {
+           dispatch(popupShow());
+      },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(About);
+// export default About;
