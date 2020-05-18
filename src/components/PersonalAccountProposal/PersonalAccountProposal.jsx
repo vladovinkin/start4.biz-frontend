@@ -4,7 +4,7 @@ import "./PersonalAccountProposal.css";
 
 const PersonalAccountProposal = ({zayavka}) => {
     return (
-        <article iv className="pa-proposal">
+        <article className="pa-proposal">
             <div className="pa-proposal__property">
                 Номер заявки: 
                 <span className="pa-proposal__property pa-proposal__property-value">{zayavka.id}</span>
