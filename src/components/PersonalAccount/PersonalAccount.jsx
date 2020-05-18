@@ -6,12 +6,10 @@ import OrganizationInformation from '../OrganizationInformation/OrganizationInfo
 import PersonalAccountProposals from '../PersonalAccountProposals/PersonalAccountProposals';
 import PersonalRegistrationContainer from '../../containers/PersonalRegistrationContainer';
 import { PersonalAccountExit } from '../PersonalAccountExit/PersonalAccountExit';
+
 import "./PersonalAccount.css";
 
-const PersonalAccount = (loginOpenValue = true) => {
-
-let [loginOpen, setLoginOpen] = useState(loginOpenValue);
-let [login, setLogin] = useState(false);
+const PersonalAccount = () => {
 
 const displayNone = 'question-wraper--none';
 
@@ -90,8 +88,8 @@ return (
                                                 Информация об организации
                                             </span>
                                         </Link>
-                                    </li>
-                                    <li className="personal-account__navigation-list-item">
+                                     </li>
+                                     <li className="personal-account__navigation-list-item">
                                         <Link to="/account/proposals"
                                             className="personal-account__navigation-list-link  personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
                                             title="Заявки">
@@ -108,12 +106,12 @@ return (
 									</a>
 									</li>
                                  </ul>
-
                             </div>
-                                    
+									  
                             </>                               
                             )}
                             {!login && (
+<<<<<<< HEAD
 <<<<<<< HEAD
                               <PersonalRegistrationContainer 
                                 clickHandlerLogin={clickHandlerLogin}
@@ -121,14 +119,15 @@ return (
 =======
                             <PersonalRegistrationContainer />
 >>>>>>> 0568b388c25ae294d78978c9ea4b5d618e7c806f
+=======
+                              <PersonalRegistrationContainer />
+>>>>>>> c0867c6c478cfd0931fc34f28a277875613411fc
                             )}
                         </div>
                     </div>
                 </div>
             </div>
         </Fragment>
-      }
-    </>
    )
 }
 
