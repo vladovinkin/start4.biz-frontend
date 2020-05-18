@@ -27,7 +27,7 @@ const clickHendlerYes = () => {
     setRedirect(true);
 };
 // ждем token 
-const login = false;
+const login = true;
 
 return (
    <Fragment>
