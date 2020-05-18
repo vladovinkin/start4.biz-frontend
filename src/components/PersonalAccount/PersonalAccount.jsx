@@ -6,10 +6,12 @@ import OrganizationInformation from '../OrganizationInformation/OrganizationInfo
 import PersonalAccountProposals from '../PersonalAccountProposals/PersonalAccountProposals';
 import PersonalRegistrationContainer from '../../containers/PersonalRegistrationContainer';
 import { PersonalAccountExit } from '../PersonalAccountExit/PersonalAccountExit';
-
 import "./PersonalAccount.css";
 
-const PersonalAccount = () => {
+const PersonalAccount = (loginOpenValue = true) => {
+
+let [loginOpen, setLoginOpen] = useState(loginOpenValue);
+let [login, setLogin] = useState(false);
 
 const displayNone = 'question-wraper--none';
 
@@ -77,8 +79,8 @@ return (
                                                 Информация об организации
                                             </span>
                                         </Link>
-                                     </li>
-                                     <li className="personal-account__navigation-list-item">
+                                    </li>
+                                    <li className="personal-account__navigation-list-item">
                                         <Link to="/account/proposals"
                                             className="personal-account__navigation-list-link  personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
                                             title="Заявки">
@@ -95,18 +97,21 @@ return (
 									</a>
 									</li>
                                  </ul>
+
                             </div>
-									  
+                                    
                             </>                               
                             )}
                             {!login && (
-                              <PersonalRegistrationContainer />
+                            <PersonalRegistrationContainer />
                             )}
                         </div>
                     </div>
                 </div>
             </div>
         </Fragment>
+      }
+    </>
    )
 }
 

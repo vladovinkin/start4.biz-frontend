@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as booleanActions from './../store/actions/popupActions';
+import * as booleanActions from '../store/actions/popupActions';
 import { QuestionForm } from '../components/QuestionForm/QuestionForm';
 
 const mapStateToProps = (state) => { 
