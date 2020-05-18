@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './PersonalRegistration.css';
 
-export const PersonalRegistration = ({popupShow}) => {
+export const PersonalRegistration = ({popupShow, clickHandlerLogin}) => {
 
    const [form, setForm] = useState({
       email: '',
@@ -52,6 +52,7 @@ export const PersonalRegistration = ({popupShow}) => {
    
             <button 
                className='personal-account__registration-content-button personal-account__registration-form-button'
+               onClick={clickHandlerLogin}
                type="submit" 
             >ВОЙТИ
             </button>
