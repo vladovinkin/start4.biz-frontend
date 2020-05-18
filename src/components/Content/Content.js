@@ -47,7 +47,7 @@ function Content() {
                 <Route path="/account">
                     <PersonalAccount />
                 </Route>
-                <Route path="/">
+                <Route path="/" exact>
                     <Fragment>
                         <BestDealBlock />
                         <WorkStepContainer />

@@ -1,8 +1,11 @@
 import React from 'react';
 import './PersonalAccountExit.css';
+import { Redirect } from 'react-router-dom';
 
-export const PersonalAccountExit = ({classNames, clickHendlerYes, clickHendlerNo}) => {
-
+export const PersonalAccountExit = ({redirect, classNames, clickHendlerYes, clickHendlerNo}) => {
+   if(redirect) {
+      return <Redirect to='/'/>
+   }
    return (
       <div className={`question-wraper ${classNames}`}>
          <div className="accout_exit accout_exit--thema-white accout_exit--flex">

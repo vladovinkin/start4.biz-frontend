@@ -1,12 +1,11 @@
 import React, { Fragment, useState } from 'react';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import ContactInformation from '../ContactInformation/ContactInformation';
 import OrganizationInformation from '../OrganizationInformation/OrganizationInformation';
 import PersonalAccountProposals from '../PersonalAccountProposals/PersonalAccountProposals';
 import PersonalRegistrationContainer from '../../containers/PersonalRegistrationContainer';
 import { PersonalAccountExit } from '../PersonalAccountExit/PersonalAccountExit';
-import Login from "./../Login/Login";
 import "./PersonalAccount.css";
 
 const PersonalAccount = (loginOpenValue = true) => {
@@ -14,44 +13,32 @@ const PersonalAccount = (loginOpenValue = true) => {
 let [loginOpen, setLoginOpen] = useState(loginOpenValue);
 let [login, setLogin] = useState(false);
 
-const[classNames, setClassNames] = useState('question-wraper--none');
+const displayNone = 'question-wraper--none';
+
+const[classNames, setClassNames] = useState(displayNone);
+const[redirect, setRedirect] = useState(false);
 
 const clickHendlerNo = () => {
-   setClassNames('question-wraper--none')
+    if(classNames === displayNone) {
+        return setClassNames('');
+    }
+    setClassNames(displayNone);
 };
 
 const clickHendlerYes = () => {
-	setClassNames('');
-	console.log('PersonalAccount.jsx: click');
+    setRedirect(true);
 };
-   
-// const login = true;
-
-function toggleLogin () {
-    setLoginOpen (
-        loginOpen = !loginOpen
-    )
-}
-
-function toggleAccount() {
-    setLoginOpen (
-        loginOpen = !loginOpen
-    )
-    setLogin(
-        login = !login
-    )
-}
+// ждем token 
+const login = true;
 
 return (
-    <>
-      {loginOpen && <Login changeLogin={toggleLogin} isLogin={toggleAccount}/>}
-      {login && 
-        <Fragment>
-            <PersonalAccountExit 
+   <Fragment>
+		<PersonalAccountExit 
             classNames={classNames} 
-                clickHendlerNo={clickHendlerNo}
-                clickHendlerYes={clickHendlerYes}
-            />
+            redirect={redirect}
+			clickHendlerNo={clickHendlerNo}
+			clickHendlerYes={clickHendlerYes}
+		/>
             <div className="container-fluid">
                 <div className="personal-account">
                     <div className="personal-account__inner">
@@ -100,16 +87,17 @@ return (
                                             <span className="personal-account__navigation-list-text">
                                                 Заявки
                                             </span>
-                                        </Link>
-                                    </li>
-                                    <li className="personal-account__navigation-list-item">
-                                    <a href="#"
-                                        className="personal-account__navigation-list-link   personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
-                                        onClick={clickHendlerYes}
-                                    >Выход
-                                    </a>
-                                    </li>
-                                </ul>
+                                         </Link>
+                                     </li>
+									<li className="personal-account__navigation-list-item">
+									<a href="#"
+									className="personal-account__navigation-list-link   personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
+									onClick={clickHendlerNo}
+									  >Выход
+									</a>
+									</li>
+                                 </ul>
+
                             </div>
                                     
                             </>                               
