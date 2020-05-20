@@ -70,7 +70,7 @@
    height:16px;
    left: 0px;
    top: 0px;
-   background-image: url(./../../img/close-2.png);
+   background-image: url(./img/close-2.png);
    background-repeat: no-repeat;
 }
 
@@ -97,7 +97,7 @@
    height:13px;
    left: 281px;
    top: 10px;
-   background-image: url(./../../img/icons8-edit_24.png);
+   background-image: url(./img/icons8-edit_24.png);
    background-repeat: no-repeat;
 }
 
@@ -133,6 +133,6 @@
    height:8px;
    left: 133px;
    top: 12px;
-   background-image: url(./../../img/arrow_forward_24px.png);
+   background-image: url(./img/arrow_forward_24px.png);
    background-repeat: no-repeat;
 }
