@@ -7,10 +7,14 @@ import commentImage from './../../img/comment.png';
 import clockImage from './../../img/icon-clock-black.png';
 import finorgImage from './../../img/finorg-image.png';
 import QuestionFormContainer from './../../containers/QuestionFormContainer';
-import {popupShow} from './../../store/actions/popupActions';
+import {popupShow, popupHide} from './../../store/actions/popupActions';
 import Popup from './../Popup/Popup.jsx';
 
-const ToFinorg = ({isPopupShow, popupShow}) => {
+const ToFinorg = ({isPopupShow, popupShow, popupHide}) => {
+
+    const buttonHandlerHiden = () => {
+        popupHide()
+    }
 
     const buttonHandler = () => {
         popupShow();
@@ -93,7 +97,7 @@ const ToFinorg = ({isPopupShow, popupShow}) => {
                         Стать партнёром
                     </span>
                 </div>
-                {isPopupShow && <Popup form={<QuestionFormContainer />}/>}
+                {isPopupShow && <Popup form={<QuestionFormContainer buttonHandlerHiden={buttonHandlerHiden} />}/>}
         </section>
         </div>
     );
@@ -108,8 +112,11 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return {
        popupShow: () => {
-           dispatch(popupShow());
+        dispatch(popupShow());
       },
+      popupHide: () => {
+        dispatch(popupHide())
+      }
     }
 }
 

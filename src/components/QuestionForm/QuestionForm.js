@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 import './index.css';
+// import './QuestionForm.css';
 
-export const QuestionForm = () => {
+export const QuestionForm = ({ buttonHandlerHiden }) => {
 
    const [form, setForm] = useState({// локальное состояние формы
       name_org: '',
@@ -27,7 +28,7 @@ export const QuestionForm = () => {
          <form className="question"> 
             <button 
                className="question__btn"
-               // onClick={showFormHandler}
+               onClick={buttonHandlerHiden}
             >
             </button>
             <span className="question__heading question__heading--style-text">Регистрация</span>
