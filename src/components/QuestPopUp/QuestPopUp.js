@@ -32,7 +32,32 @@ if(popUpOpen) {
     function sendQuestion () {
         validateQuestion()
         if (validPop) {
-            return console.log("Почта отправителя: " + inputVal + " Текст: " + textVal)
+            console.log("Почта отправителя: " + inputVal + " Текст: " + textVal)
+
+            const body = {
+                quest_email: inputVal,
+                question: textVal,
+            }
+            
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8',
+                    'Access-Control-Allow-Origin': '*',
+                },
+                body: JSON.stringify(body),
+            }
+            
+            fetch('/api/faq/create-faq', options)
+            .then(response => {
+                console.log(response);
+                if (response.status === 200) {
+                    console.log(response);
+                } else {
+                    alert ("Произошла ошибка при отправке данных!");
+                }
+            })
+            .catch(error => console.log("Error ", error))
         }
     }
 

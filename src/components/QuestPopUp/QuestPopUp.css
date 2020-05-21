@@ -190,6 +190,7 @@
     padding-left: 10px;
     padding-right: 30px;
     margin-bottom: 20px;
+    resize: none;
 }
 
 .popUp__text::-webkit-scrollbar {
