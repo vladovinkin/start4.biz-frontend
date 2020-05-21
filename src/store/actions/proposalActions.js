@@ -5,7 +5,7 @@ import { PROPOSAL_CHANGE_STEP,
 	PROPOSAL_REQUEST_STARTED,
 	PROPOSAL_REQUEST_SUCCESS,
 	PROPOSAL_REQUEST_FAILURE,
- } from "../types";
+ } from "./../types";
 
 export const proposalChangeStep = (newStep) =>{
 	return {
@@ -109,23 +109,34 @@ export const proposalRequest = (formData) => {
 		status: false,
 		data: formData,
 	}
+	
 	const options = {
 		method: 'POST',
 //		mode: 'no-cors',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8',
+			// 'Content-Type': 'application/json',
 			'Access-Control-Allow-Origin': '*',
 //			'Access-Control-Allow-Methods': "POST",
-//			'Accept': 'application/json',
-//			'Content-Type': 'multipart/form-data',
+			// 'Accept': 'application/json',
+			// 'Accept': '*/*',
+			// 'Connection': 'keep-alive',
 		},
 		body: JSON.stringify(formData),
+		// redirect: 'follow',
 	}
 
 	console.log("data ", options.body);
 
 	return dispatch => fetch('/api/request/create-request-entry', options)
-	.then(response => console.log(response))
+	.then(response => {
+		console.log(response);
+		if (response.status === 200) {
+			dispatch(proposalChangeSuccess(true));
+		} else {
+			alert ("Произошла ошибка при отправке данных!");
+		}
+	})
     .catch(error => console.log("Error ", error))
 
 }

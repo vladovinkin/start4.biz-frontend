@@ -24,3 +24,8 @@
 .content-policy {
     background-color:#EFF3F5;
 }
+@media screen and (max-width: 767px) {
+    .content-2finorg{
+        padding: 10px;
+    }
+}

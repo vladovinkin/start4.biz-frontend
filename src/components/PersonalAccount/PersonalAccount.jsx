@@ -1,20 +1,61 @@
-import React, { Fragment } from 'react';
-import {Switch, Route} from 'react-router-dom';
+import React, { Fragment, useState } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom';
 import ContactInformation from '../ContactInformation/ContactInformation';
 import OrganizationInformation from '../OrganizationInformation/OrganizationInformation';
 import PersonalAccountProposals from '../PersonalAccountProposals/PersonalAccountProposals';
+import PersonalRegistrationContainer from '../../containers/PersonalRegistrationContainer';
+import { PersonalAccountExit } from '../PersonalAccountExit/PersonalAccountExit';
+
 import "./PersonalAccount.css";
 
 const PersonalAccount = () => {
-    return (
-        <Fragment>
+
+const displayNone = 'question-wraper--none';
+
+const[classNames, setClassNames] = useState(displayNone);
+const[redirect, setRedirect] = useState(false);
+const[login, setLogin] = useState(false)
+/**
+ * 
+ */
+const clickHendlerNo = () => {
+    if(classNames === displayNone) {
+        return setClassNames('');
+    }
+    setClassNames(displayNone);
+};
+/**
+ * 
+ */
+const clickHendlerYes = () => {
+    setRedirect(true);
+};
+/**
+ * 
+ */
+const clickHandlerLogin = () => {
+    setLogin(true)
+}
+// ждем token 
+// const login = false;
+
+return (
+   <Fragment>
+		<PersonalAccountExit 
+            classNames={classNames} 
+            redirect={redirect}
+			clickHendlerNo={clickHendlerNo}
+			clickHendlerYes={clickHendlerYes}
+		/>
             <div className="container-fluid">
                 <div className="personal-account">
                     <div className="personal-account__inner">
                     <div className="bread-crump">тут ссылки...</div>
                         <div className="personal-account__content-wrapper">
-                            <div className="personal-account__content">
+                            {login && (
+                            <>
+                            <div className='personal-account__content'>
                                 <Switch>
                                     <Route path="/account/contactInformation">
                                         <ContactInformation />
@@ -32,7 +73,7 @@ const PersonalAccount = () => {
                                 <ul className="personal-account__navigation-list">
                                     <li className="personal-account__navigation-list-item">
                                         <Link to="/account/contactInformation"
-                                            className="personal-account__navigation-list-link"
+                                            className="personal-account__navigation-list-link  personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
                                             title="Контактная информация">
                                             <span className="personal-account__navigation-list-text">
                                                 Контактная информация
@@ -41,31 +82,45 @@ const PersonalAccount = () => {
                                     </li>
                                     <li className="personal-account__navigation-list-item">
                                         <Link to="/account/organizationInformation"
-                                            className="personal-account__navigation-list-link"
+                                            className="personal-account__navigation-list-link  personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
                                             title="Контактная информация">
                                             <span className="personal-account__navigation-list-text">
                                                 Информация об организации
                                             </span>
                                         </Link>
-                                    </li>
-                                    <li className="personal-account__navigation-list-item">
+                                     </li>
+                                     <li className="personal-account__navigation-list-item">
                                         <Link to="/account/proposals"
-                                            className="personal-account__navigation-list-link"
+                                            className="personal-account__navigation-list-link  personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
                                             title="Заявки">
                                             <span className="personal-account__navigation-list-text">
                                                 Заявки
                                             </span>
-                                        </Link>
-                                    </li>
-                                    <li className="personal-account__navigation-list-item">Выход</li>
-                                </ul>
+                                         </Link>
+                                     </li>
+									<li className="personal-account__navigation-list-item">
+									<a href="#"
+									className="personal-account__navigation-list-link   personal-account__navigation-list-link--hover personal-account__navigation-list-link--active"
+									onClick={clickHendlerNo}
+									  >Выход
+									</a>
+									</li>
+                                 </ul>
                             </div>
+									  
+                            </>                               
+                            )}
+                            {!login && (
+                              <PersonalRegistrationContainer 
+                                clickHandlerLogin={clickHandlerLogin}
+                              />
+                            )}
                         </div>
                     </div>
                 </div>
             </div>
         </Fragment>
-    )
+   )
 }
 
 export default PersonalAccount;

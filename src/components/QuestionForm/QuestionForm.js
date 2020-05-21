@@ -1,18 +1,10 @@
 import React, { useState } from 'react';
 
-import './QuestionForm.css';
+import './index.css';
+// import './QuestionForm.css';
 
-export const QuestionForm = () => {
-/**
- * Функция кнопки закрыть форму без отправления данных
- * @param event событие клика 
- * @param AddFalse action меняющий состояние на false, перерендер и сокрытие окна 
- * event.preventDefault(); метод отключающий дефолтное поведение кнопок формы .
- */  
-   const showFormHandler = (event, AddFalse) => {
-      AddFalse();
-      event.preventDefault();
-   }
+export const QuestionForm = ({ buttonHandlerHiden }) => {
+
    const [form, setForm] = useState({// локальное состояние формы
       name_org: '',
       INN: '',
@@ -23,30 +15,20 @@ export const QuestionForm = () => {
       contacts: '',
       email: '',
    });
-/**
+   /**
  * Прослушка событий по имени input получение значения с input
  * @param event событие заполнения input
  */  
    const changeHandler = (event) => {
       setForm({...form, [event.target.name]: event.target.value})
    };
-/**
- * Функция кнопки "отправить данные"
- * @param event событие клика
- * @param AddFalse action меняющий состояние на false, перерендер и сокрытие окна
- */
-   const submitHandler = (event, AddFalse) => {
-      console.log(form);
-      AddFalse();
-      event.preventDefault();
-   }
 
    return (
       <div className="question-wraper">
          <form className="question"> 
             <button 
                className="question__btn"
-               onClick={showFormHandler}
+               onClick={buttonHandlerHiden}
             >
             </button>
             <span className="question__heading question__heading--style-text">Регистрация</span>
@@ -164,7 +146,7 @@ export const QuestionForm = () => {
 
             <button 
                className="question__btn-send"
-               onClick={submitHandler}
+               // onClick={submitHandler}
             >
                Отправить данные
             </button>

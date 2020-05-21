@@ -138,40 +138,43 @@ const SuccessStep = (props) => {
 }
 
 const ProposalFormNR = (props) => {
-let step = props.step;
+	let step = props.step;
 
-const stepForward = () => {
-if(step === 3)
-	return;
+	const stepForward = () => {
+		if (step === 3)
+			return;
 
-	props.dispatch(proposalChangeStep(++step));
-}
+		props.dispatch(proposalChangeStep(++step));
+	}
 
-const stepBack = () => {
-if(step === 1)
-	return;
+	const stepBack = () => {
+		if (step === 1)
+			return;
 
-	props.dispatch(proposalChangeStep(--step));
-}
+		props.dispatch(proposalChangeStep(--step));
+	}
 
-let showData;
+	let showData;
 
-if(props.success)
-{
-	showData = <SuccessStep />
-}
-else {
-	if(step === 1){ showData = <ProposalStep1 stepForward={stepForward}/>}
-	else if(step === 2){showData = <ProposalStep2 whatToBuy={props.whatToBuy} transportPurpose={props.transportPurpose} stepBack={stepBack} stepForward={stepForward}/>}
-	else if(step === 3){showData = <ProposalStep3 summAvPayment={props.summAvPayment} leasingPeriod={props.leasingPeriod} stepBack={stepBack}/>}
-}
-return (
-	<Fragment>
-		<form className="proposal" onSubmit={props.handleSubmit}>
-		{showData}
-		</form>
-	</Fragment>
-);
+	if (props.success) {
+		showData = <SuccessStep />
+	} else {
+		if (step === 1) { 
+			showData = <ProposalStep1 stepForward={stepForward}/>
+		} else if (step === 2) {
+			showData = <ProposalStep2 whatToBuy={props.whatToBuy} transportPurpose={props.transportPurpose} stepBack={stepBack} stepForward={stepForward}/>
+		} else if (step === 3) {
+			showData = <ProposalStep3 summAvPayment={props.summAvPayment} leasingPeriod={props.leasingPeriod} stepBack={stepBack}/>
+		}
+	}
+
+	return (
+		<Fragment>
+			<form className="proposal" onSubmit={props.handleSubmit}>
+			{showData}
+			</form>
+		</Fragment>
+	);
 }
 
 const onSubmit = (values, dispatch) => {
@@ -181,9 +184,9 @@ const onSubmit = (values, dispatch) => {
 };
 
 //оборачиваю форму в reduxForm
-const ProposalForm = reduxForm({
+const ProposalForm = reduxForm ({
 	form: 'proposal',
 	onSubmit,
-})(ProposalFormNR)
+}) (ProposalFormNR)
 
 export default ProposalForm;
