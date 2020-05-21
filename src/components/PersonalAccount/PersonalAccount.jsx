@@ -54,7 +54,7 @@ return (
                     <div className="bread-crump">тут ссылки...</div>
                         <div className="personal-account__content-wrapper">
                             {login && (
-                            <>
+                            <Fragment>
                             <div className='personal-account__content'>
                                 <Switch>
                                     <Route path="/account/contactInformation">
@@ -107,8 +107,7 @@ return (
 									</li>
                                  </ul>
                             </div>
-									  
-                            </>                               
+                            </Fragment>
                             )}
                             {!login && (
                               <PersonalRegistrationContainer 

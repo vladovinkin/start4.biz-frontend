@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import {Switch, Route} from 'react-router-dom';
+import { connect } from 'react-redux';
 import Uc from './../Uc/Uc';
 import ToBusiness from './../ToBusiness/ToBusiness';
 import ToFinorg from './../ToFinorg/ToFinorg';
@@ -10,11 +11,16 @@ import Questions from './../Questions/Questions';
 import PartnersBlock from './../PartnersBlock/PartnersBlock';
 import PersonalAccount from '../PersonalAccount/PersonalAccount';
 import Policy from './../Policy/Policy';
+import ProposalFormContainer from '../../containers/ProposalFormContainer';
+import { proposalChangeStep } from './../../store/actions/proposalActions';
+import { popupShow } from '../../store/actions/popupActions';
+import Popup from './../Popup/Popup.jsx';
 import './Content.css';
 
-function Content() {
+function Content({isPopupShow}) {
     return (
         <div className="content-main">
+            {isPopupShow && <Popup form={<ProposalFormContainer />}/>}
             <Switch>
                 <Route path="/About">
                     <div className="content-about">
@@ -60,4 +66,21 @@ function Content() {
     );
 }
 
-export default Content;
+//export default Content;
+const mapStateToProps = state => {
+	return {
+        isPopupShow: state.popup.isShow,
+	}
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+       popupShow: () => {
+           dispatch(proposalChangeStep (1));
+           dispatch(popupShow());
+      },
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Content);
