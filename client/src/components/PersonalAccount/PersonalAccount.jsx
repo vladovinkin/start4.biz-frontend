@@ -11,34 +11,34 @@ import "./PersonalAccount.css";
 
 const PersonalAccount = () => {
 
-const displayNone = 'question-wraper--none';
-
-const[classNames, setClassNames] = useState(displayNone);
-const[redirect, setRedirect] = useState(false);
-const[login, setLogin] = useState(false)
-/**
- * 
- */
-const clickHendlerNo = () => {
-    if(classNames === displayNone) {
-        return setClassNames('');
+    const displayNone = 'question-wraper--none';
+    
+    const[classNames, setClassNames] = useState(displayNone);
+    const[redirect, setRedirect] = useState(false);
+    const[login, setLogin] = useState(false)
+    /**
+     * 
+     */
+    const clickHendlerNo = () => {
+        if(classNames === displayNone) {
+            return setClassNames('');
+        }
+        setClassNames(displayNone);
+    };
+    /**
+     * 
+     */
+    const clickHendlerYes = () => {
+        setRedirect(true);
+    };
+    /**
+     * 
+     */
+    const clickHandlerLogin = () => {
+        setLogin(true)
     }
-    setClassNames(displayNone);
-};
-/**
- * 
- */
-const clickHendlerYes = () => {
-    setRedirect(true);
-};
-/**
- * 
- */
-const clickHandlerLogin = () => {
-    setLogin(true)
-}
-// ждем token 
-// const login = false;
+    // ждем token 
+    // const login = false;
 
 return (
    <Fragment>

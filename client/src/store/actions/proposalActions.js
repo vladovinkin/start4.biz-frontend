@@ -105,10 +105,10 @@ export const proposalFormHide = () =>{
 
 export const proposalRequest = (formData) => {
 	console.log("run request ", formData);
-	const body = {
-		status: false,
-		data: formData,
-	}
+	// const body = {
+	// 	status: false,
+	// 	data: formData,
+	// }
 	
 	const options = {
 		method: 'POST',
@@ -128,13 +128,14 @@ export const proposalRequest = (formData) => {
 
 	console.log("data ", options.body);
 
-	return dispatch => fetch('/api/request/create-request-entry', options)
+	return dispatch => fetch('/api/auth/register', options)
 	.then(response => {
 		console.log(response);
 		if (response.status === 200) {
 			dispatch(proposalChangeSuccess(true));
 		} else {
-			alert ("Произошла ошибка при отправке данных!");
+			console.log(response)
+			// alert ("Произошла ошибка при отправке данных!");
 		}
 	})
     .catch(error => console.log("Error ", error))
