@@ -25,7 +25,6 @@ const initialState = {
 	contactSubjectDescription: "",
 	contactAdvancePayment: 0,
 	contactCreditPeriod: 0,
-
 };
 
 export const proposalFormReducer = (state = initialState, action) => {
