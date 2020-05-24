@@ -13,7 +13,7 @@ import Popup from './../Popup/Popup.jsx';
 const ToFinorg = ({isPopupShow, popupShow, popupHide}) => {
 
     const buttonHandlerHiden = () => {
-        popupHide()
+        popupHide();
     }
 
     const buttonHandler = () => {
