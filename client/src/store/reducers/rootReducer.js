@@ -5,6 +5,7 @@ import {popupReducer} from './popupReducer';
 import {partnersReducer} from './partnersReducer';
 import {booleanReducer} from './booleanReducer';
 import {paProposalsReducer} from './paProposalsReducer';
+import {faqReducer} from './faqReducer';
 
 export const rootReducer = combineReducers({
     proposalForm: proposalFormReducer,
@@ -13,4 +14,5 @@ export const rootReducer = combineReducers({
     partners: partnersReducer,
     bool: booleanReducer,
     paProposals: paProposalsReducer,
+    faq: faqReducer,
 })
