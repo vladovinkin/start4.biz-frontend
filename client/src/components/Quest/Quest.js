@@ -18,9 +18,9 @@ if(!quest.open) {
     return (
         <div className="quest">
             <div className="quest__content">
-                <h4 className="quest__head" onClick={() => changeVisible(quest.id)}>{quest.title}<div className="quest__more">{quest.open ? "-" : "+"}</div></h4>
+                <h4 className="quest__head" onClick={() => changeVisible(quest.id)}>{quest.question}<div className="quest__more">{quest.open ? "-" : "+"}</div></h4>
                 <div className={classText.join(" ")}>
-                {validateText(quest.text)}
+                {validateText(quest.answer)}
                 </div>
             </div>
         </div>
