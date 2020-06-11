@@ -1,4 +1,4 @@
-// import {ADD_PARTNER, SHOW_ALL_PARTNERS} from "../types";
+import {TOGGLE_ANSWER_SHOW, FAQ_LOAD_REQUEST, FAQ_LOAD_SUCCESS, FAQ_LOAD_FAILURE} from './../types';
 
 const initialState = {
     faq: [
@@ -11,13 +11,37 @@ const initialState = {
 
 export const faqReducer = (state = initialState, action) => {
 	switch (action.type) {
-		// case ADD_PARTNER:
-        //     return {
-        //         ...state, 
-        //         faq: {
-        //             ...state.faq,
-        //         }
-        //     }
+		case TOGGLE_ANSWER_SHOW:
+            const id = action.payload;
+            const opened = state.faq[id].open;
+            const currentIndex = state.faq.findIndex(
+                (item) => item.id == id
+            );
+
+            return {
+                ...state,
+                faq: [
+                    ...state.faq.slice (0, currentIndex),
+                    {
+                        ...state.faq[currentIndex],
+                        open: !opened,
+                    }, 
+                    ...state.faq.slice (currentIndex+1),
+                ]
+            }
+        case FAQ_LOAD_REQUEST:
+            return {
+                ...state,
+            }
+        case FAQ_LOAD_SUCCESS:
+            return {
+                ...state,
+                faq: action.payload.data,
+            }
+        case FAQ_LOAD_FAILURE:
+            return {
+                ...state,
+            }
 		default: return state;
 	}
 }
