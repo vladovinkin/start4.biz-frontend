@@ -3,11 +3,9 @@ import { connect } from 'react-redux';
 import './BestDealBlock.css';
 import SliderView from './../SliderView/SliderView';
 import {popupShow} from './../../store/actions/popupActions';
-//import ProposalFormContainer from './../../containers/ProposalFormContainer';
-//import Popup from './../Popup/Popup.jsx';
 import { proposalChangeStep } from './../../store/actions/proposalActions';
 
-const BestDealBlock = ({partners, isPopupShow, popupShow}) => {
+const BestDealBlock = ({partners, popupShow}) => {
 
     const buttonHandler = () => {
         popupShow();
@@ -29,7 +27,6 @@ const BestDealBlock = ({partners, isPopupShow, popupShow}) => {
                     </div>
                 </div>
             </div>
-            {/* {isPopupShow && <Popup form={<ProposalFormContainer />}/>} */}
         </Fragment>
 	)
 }
@@ -37,17 +34,11 @@ const BestDealBlock = ({partners, isPopupShow, popupShow}) => {
 const mapStateToProps = state => {
 	return {
         partners: state.partners.partners,
-//        formIsShow: state.proposalForm.isShow,
-//        isPopupShow: state.popup.isShow,
 	}
 }
 
-
 const mapDispatchToProps = (dispatch) => {
     return {
-    //     proposalFormShow: () => {
-    //         dispatch(proposalFormShow())
-    //   },
        popupShow: () => {
            dispatch(proposalChangeStep (1));
            dispatch(popupShow());
