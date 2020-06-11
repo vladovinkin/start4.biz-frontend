@@ -13,10 +13,10 @@ export const faqReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case TOGGLE_ANSWER_SHOW:
             const id = action.payload;
-            const opened = state.faq[id].open;
             const currentIndex = state.faq.findIndex(
                 (item) => item.id == id
             );
+            const opened = state.faq[currentIndex].open;
 
             return {
                 ...state,
@@ -34,9 +34,19 @@ export const faqReducer = (state = initialState, action) => {
                 ...state,
             }
         case FAQ_LOAD_SUCCESS:
+            const result = action.payload.data;
+            const data = result.map (elem => {
+                return {
+                    ...elem,
+                    id: elem.id,
+                    question: elem.question,
+                    answer: elem.answer,
+                    open: false,
+                }
+            })
             return {
                 ...state,
-                faq: action.payload.data,
+                faq: data,
             }
         case FAQ_LOAD_FAILURE:
             return {
