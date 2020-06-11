@@ -66,13 +66,11 @@ function Content({isPopupShow}) {
     );
 }
 
-//export default Content;
 const mapStateToProps = state => {
 	return {
         isPopupShow: state.popup.isShow,
 	}
 }
-
 
 const mapDispatchToProps = (dispatch) => {
     return {
