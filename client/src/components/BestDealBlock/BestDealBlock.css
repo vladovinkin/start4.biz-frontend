@@ -1,5 +1,5 @@
 .block1 {
-    background:  #EFF3F5;
+    background: rgba(239,243,245,.96);
     display: flex;
     justify-content: space-between;
 }

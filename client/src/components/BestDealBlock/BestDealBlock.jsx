@@ -14,16 +14,18 @@ const BestDealBlock = ({partners, popupShow}) => {
 	return (
         <Fragment>
             <div className="container-fluid">
-                <div className="block1 block-inner">
-                    <div className="block1__about-leasing">
-                        <section className="about-leasing">
-                            <h2 className="about-leasing__title">Лучшие условия лизинга для Вашего бизнеса</h2>
-                            <p className="about-leasing__description">В стране десятки лизинговых компаний, готовых предложить Вам финансирование. Получи предложение, оставив одну заявку</p>
-                            <div className="button button--about-leasing" onClick={buttonHandler}>Лучшее предложение</div>
-                        </section>
-                    </div>
-                    <div className="block1__partners">
-                        <SliderView slides={partners}/>
+                <div className="block-main-bg">
+                    <div className="block1 block-inner">
+                        <div className="block1__about-leasing">
+                            <section className="about-leasing">
+                                <h2 className="about-leasing__title">Лучшие условия лизинга для Вашего бизнеса</h2>
+                                <p className="about-leasing__description">В стране десятки лизинговых компаний, готовых предложить Вам финансирование. Получи предложение, оставив одну заявку</p>
+                                <div className="button button--about-leasing" onClick={buttonHandler}>Лучшее предложение</div>
+                            </section>
+                        </div>
+                        <div className="block1__partners">
+                            <SliderView slides={partners}/>
+                        </div>
                     </div>
                 </div>
             </div>

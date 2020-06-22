@@ -1,6 +1,6 @@
 .questions {
     width: 100%;
-    background: #FFF;
+    background: rgba(255,255,255,.95);
     padding: 0 80px 77px 80px;
     display: flex;
     flex-direction: column;
