@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import './PartnersBlock.css';
 import PartnerCard from '../PartnerCard/PartnerCard';
@@ -29,18 +29,20 @@ const PartnersBlock = ({partners, isShowAllPartners, toggleShowAllPartners}) => 
     });
 
 	return (
-	<Fragment>
-        <div className="container-fluid">
-            <div className="partners-block partners-block-inner">
-                <div className="home-horizontal"> </div>
-                <div className="partners-block__title">Партнёры</div>
-                <div className="partners-block__partner-cards">
-                    {partnersData}
+        <>
+            <div className="container-fluid">
+                <div className="block-main-bg">
+                    <div className="partners-block partners-block-inner">
+                        <div className="home-horizontal"> </div>
+                        <div className="partners-block__title">Партнёры</div>
+                        <div className="partners-block__partner-cards">
+                            {partnersData}
+                        </div>
+                            <div className="home-button {/*button partners-block__button*/}" onClick={buttonHandler}>{buttonText}</div>
+                    </div>
                 </div>
-                    <div className="home-button {/*button partners-block__button*/}" onClick={buttonHandler}>{buttonText}</div>
             </div>
-        </div>
-	</Fragment>
+        </>
 	)
 }
 
