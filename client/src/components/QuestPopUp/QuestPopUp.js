@@ -1,16 +1,18 @@
-import React from "react"
+import React, {useEffect} from "react"
 import "./QuestPopUp.css"
 
 export default function Question({popUpOpen, togglePopUp}) {
-const classText = ["popUp"]
-let [inputVal, setInputVal] = React.useState('')
-let [textVal, setTextVal] = React.useState('')
 
+    const classText = ["popUp"]
 
-let [validPop, setValidPop] = React.useState(false)
-if(popUpOpen) {
-    classText.push("popUp_active")
-}
+    let [inputVal, setInputVal] = React.useState('')
+    let [textVal, setTextVal] = React.useState('')
+
+    let [validPop, setValidPop] = React.useState(false)
+
+    if(popUpOpen) {
+        classText.push("popUp_active")
+    }
     /**
      * Валидация по строке inputa
      * @param {string} text текст валидации 
@@ -60,6 +62,23 @@ if(popUpOpen) {
             .catch(error => console.log("Error ", error))
         }
     }
+
+    useEffect(() => {
+		document.addEventListener('click', handleClickOutside, false);
+
+		return () => {
+			document.removeEventListener('click', handleClickOutside, false);
+		}
+	})
+
+	const handleClickOutside = e => {
+		// const popupBlock = document.getElementsByClassName(`${classText}`)[0];
+		const popupBlock = document.getElementsByClassName(`popUp__card`)[0];
+
+		if (popUpOpen && !e.path.includes(popupBlock)) {
+			togglePopUp();
+		}
+	}
 
     return (
         <div className={classText.join(" ")}>

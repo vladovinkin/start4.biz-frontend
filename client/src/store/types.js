@@ -13,5 +13,7 @@ export const POPUP_HIDE = 'POPUP_HIDE';
 export const ADD_PARTNER = "ADD_PARTNER";
 export const SHOW_ALL_PARTNERS = "SHOW_ALL_PARTNERS";
 //question form
-// export const BOOL_TRUE = "BOOLEAN_ACTIONS_TRUE";
-// export const BOOL_FALSE = "BOOLEAN_ACTIONS_FALSE";
+export const TOGGLE_ANSWER_SHOW = "TOGGLE_ANSWER_SHOW";
+export const FAQ_LOAD_REQUEST = "FAQ_LOAD_REQUEST";
+export const FAQ_LOAD_SUCCESS = "FAQ_LOAD_SUCCESS";
+export const FAQ_LOAD_FAILURE = "FAQ_LOAD_FAILURE";

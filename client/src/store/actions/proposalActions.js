@@ -128,7 +128,7 @@ export const proposalRequest = (formData) => {
 
 	console.log("data ", options.body);
 
-	return dispatch => fetch('/api/auth/register', options)
+	return dispatch => fetch('/api/request/create-request-entry', options)
 	.then(response => {
 		console.log(response);
 		if (response.status === 200) {
